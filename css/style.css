@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+form{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 5px;
+}
+input[type='text'],input[type='password'],input[type='email']{
+    width:100%;
+    border-radius: 5px;
+    border:1px solid #ddd;
+    height:35px;
+    padding:5px;
+}
+input:focus{
+    border-radius: 5px;
+}
+input:valid:not(:placeholder-shown){
+    border: 1px solid green;
+}
+
+button{
+    border-radius: 5px;
+    padding:10px 5px;
+    border:none;
+}
