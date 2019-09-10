@@ -3,28 +3,69 @@
     padding:0;
     box-sizing: border-box;
 }
-form{
+#signupForm{
     display:grid;
     justify-content: center;
     align-content: center;
-    grid-gap: 5px;
-}
-input[type='text'],input[type='password'],input[type='email']{
-    width:100%;
-    border-radius: 5px;
-    border:1px solid #ddd;
-    height:35px;
-    padding:5px;
-}
-input:focus{
-    border-radius: 5px;
-}
-input:valid:not(:placeholder-shown){
-    border: 1px solid green;
+    grid-gap: 10px;
 }
 
 button{
     border-radius: 5px;
     padding:10px 5px;
     border:none;
+    background-color: #41D873;
 }
+
+/*      FORM VALIDATION         */
+
+
+ label {
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    height:35px;
+    padding:10px 10px 10px 30px;
+    background: #eee;
+}
+ input[type="text"]:valid,
+ input[type="email"]:valid,
+ input[type="password"]:valid {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+}
+input[type="text"]:valid + label,
+ input[type="email"]:valid + label,
+ input[type="password"]:valid + label {
+  opacity: 0;
+}
+ input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+ input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  background: pink;
+}
+ 
+input[type="text"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
+input[type="email"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
+input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements {
+  max-height: 200px;
+  padding:3px 10px 10px 30px;
+}
+form .requirements {
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
+  font-size: 80%;
+}
+

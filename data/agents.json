@@ -1,3 +1,10 @@
 [
-   {"name":"test"} 
+    {
+        "name": "test"
+    },
+    {
+        "name": "",
+        "email": "",
+        "password": ""
+    }
 ]
