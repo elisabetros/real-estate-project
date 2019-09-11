@@ -1,15 +1,20 @@
 [
     {
-        "name": "testUser"
+        "name": "Freyr",
+        "email": "frer@e.com",
+        "password": "password",
+        "id": "5d77fc81cecc5"
     },
     {
-        "name": "name",
-        "email": "e@e.com",
-        "password": "pass"
+        "name": "Freyja",
+        "email": "freas@e.com",
+        "password": "PASSWord",
+        "id": "5d77fcc3b73cf"
     },
     {
-        "name": "name",
-        "email": "e@e.com",
-        "password": "pass"
+        "name": "mike",
+        "email": "mike@mike.com",
+        "password": "password",
+        "id": "5d7902c31582e"
     }
 ]

@@ -1,3 +1,16 @@
 [
-    {}
+    {
+        "agent": "5d77fc609e013",
+        "address": "address 3000",
+        "price": "2200000",
+        "zip": "2100",
+        "image": "image\/3.jpg"
+    },
+    {
+        "agent": "5d77fc609e013",
+        "address": "Norrebrogade 3",
+        "price": "2200000",
+        "zip": "2100",
+        "image": "image\/4.jpg"
+    }
 ]

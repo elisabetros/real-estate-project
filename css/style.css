@@ -1,51 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-#signupForm{
+body{
+    width: 100vw;
+    height:100%;
+}
+h1,h2,h3,label,button,a{
+    font-family: 'Roboto Condensed';
+}
+p,div,input,span{
+    font-family: 'Roboto';
+}
+h1, h2{
+    text-align: center;
+}
+
+/****   MENU    *******/
+nav{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    align-content: center;
+    padding: 0 1em;
+    height:50px;
+    background:#eee;
+}
+a{
+    text-align: center;
+    text-decoration:none;
+}
+nav>a{
+    color:black;
+}
+a#logo{
+    text-align: left; 
+}
+nav>a:visited{
+    color:black;
+}
+a.active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+#loginPage > h1, #signupPage >h1{
+                                                                    
+    margin-top: 70px;
+}
+#loginPage > h2, #signupPage >h2{
+    margin-bottom: 20px;
+}
+
+/*****  Reusable Classes    *****/
+.btnLogout, button{
+    height:35px;
+    line-height: 35px;
+    margin: 5% auto;
+    padding:0 8%;
+    text-align: center;
+    background-color:#009688;
+    color:white;
+    border-radius:5px;
+    font-size: 1em;
+    border:none;
+}
+
+/*****   INDEXPAGE    *****/
+#frontpage {
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    grid-gap: 10px;
+    text-align: center;
+    justify-content: center;
+    margin:10em ;
+}
+#frontpage > h1{
+    grid-column: 1/-1;
+}
+#frontpage >.searchBar{
+    display: block;
+    font-size: 120%;
+    height:45px;
+}
+/*****   FORM    *****/
+
+#signupForm, form{
     display:grid;
     justify-content: center;
     align-content: center;
     grid-gap: 10px;
 }
-
-button{
+/* button{
     border-radius: 5px;
     padding:10px 5px;
-    border:none;
-    background-color: #41D873;
+    
+    background-color: #009688;
+} */
+button:disabled{
+    background:#ddd;
 }
-
-/*      FORM VALIDATION         */
-
-
- label {
-  font-weight: bold;
+label {
+    font-weight: bold;
 }
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    border: 0;
-    border-radius: 5px;
-    height:35px;
-    padding:10px 10px 10px 30px;
-    background: #eee;
+   width: 100%;
+   border: 0;
+   border-radius: 5px;
+   height:35px;
+   padding:10px 10px 10px 30px;
+   background: #eee;
 }
- input[type="text"]:valid,
- input[type="email"]:valid,
- input[type="password"]:valid {
+
+/*      FORM VALIDATION         */
+ input[type="text"]:valid:not(:placeholder-shown),
+ input[type="email"]:valid:not(:placeholder-shown),
+ input[type="password"]:valid:not(:placeholder-shown){
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 5px 6px;
+  background-color:#eee;
+  /* position: relative; */
 }
-input[type="text"]:valid + label,
- input[type="email"]:valid + label,
- input[type="password"]:valid + label {
-  opacity: 0;
-}
+
  input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
  input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
  input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
@@ -56,16 +137,75 @@ input[type="text"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
 input[type="email"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
 input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements {
   max-height: 200px;
-  padding:3px 10px 10px 30px;
+  /* padding:3px 10px 10px 30px; */
 }
 form .requirements {
-  padding: 0 30px 0 50px;
+  padding: 0 30px 0 30px;
   color: #999;
   max-height: 0;
   transition: all 0.3s;
   overflow: hidden;
   color: red;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 80%;
 }
 
+/*****      PROFILE PAGE USER AND AGENT     *****/
+
+.hiddenForm{
+    display:none;
+}
+.btnCloseFrm{
+    cursor: pointer;
+    text-align: right;
+    font-weight: bold;
+}
+
+.profileContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 5%;
+    /* grid-gap:5%; */
+}
+.profileContainer>h1{
+    align-self:center;
+    text-align: left;
+}
+
+
+
+/*****    MODAL    *****/
+.modal{
+    position:fixed;
+    top:0;
+    display:none;
+    background:rgba(0,0,0,.7);
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+.modalContent{
+    background:white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,.5);
+    border-radius:10px;
+    margin:10vh auto;
+    width:70vw;
+    height:30vh;
+    /* padding:3%; */
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.modalContent>div{
+    text-align:center;
+}
+.modalContent>div>button{
+    padding:2% 8%;
+    margin: 5%;
+}
+
+.continueDelete{
+    background:#960000;
+
+}
