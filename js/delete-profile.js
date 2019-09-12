@@ -18,4 +18,5 @@ function openModal(){
 
 function deleteProfile(){
     console.log('I will delete you!');
+    
 }

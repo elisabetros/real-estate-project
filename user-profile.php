@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION){
+    header('location:index.php');
+}
 $sActive= 'profile';
 $sPageTitle = 'profile';
 require_once(__DIR__.'/components/top.php');
@@ -21,17 +24,17 @@ require_once(__DIR__.'/components/top.php');
     ?>
         <!-- <button id="btnDeleteProfile">Update Information</button> -->
         
-        <button class="btnDeleteProfile">Delete Profile</button>
     </div>
     <div id="likedProperties">
         <div class="likedProperty">
-                <h2>Your Liked Properties</h2>
+            <h2>Your Liked Properties</h2>
             <img src="" alt="">
             <p>Address</p>
             <p>Price</p>
         </div>
     </div>
-
+    
+    <button class="btnDeleteProfile">Delete Profile</button>
 </div>
 
 

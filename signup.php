@@ -75,9 +75,18 @@ require_once(__DIR__.'/components/top.php');
 <form method="POST" id="frmSignup">
     <label for=""><input type="radio" name="signUpType" value="users" required>Sign up as a user</label>
     <label for=""><input type="radio" name="signUpType" value="agents" required>Sign up as a agent</label>
-    <label for="">Name (2 to 20 characters)<input type="text" name="txtName" placeholder="Jane" maxlength="20" minlength="2" data-type="text" ></label>
-    <label for="">Email<input type="text" name="txtEmail" placeholder="jane@example.com" data-type="email" value="jane@jane.com"></label>
-    <label for="">Password (min 4 characters)<input type="password" name="txtPassword" placeholder="xxxxxx" data-type="text" data-min="4" minlength="4" value="123455"></label>
+    <label for="">Name (2 to 20 characters)
+        <input type="text" name="txtName" placeholder="Jane" maxlength="20" minlength="2" data-type="text" >
+        <div class="requirements">Name must be 2 to 20 characthers</div>
+    </label>
+    <label for="">Email
+        <input type="text" name="txtEmail" placeholder="jane@example.com" data-type="email" value="jane@jane.com">
+        <div class="requirements">Email must be at least 1 charachter, include @ a . and a domain name</div>
+    </label>
+    <label for="">Password (min 4 characters)
+        <input type="password" name="txtPassword" placeholder="xxxxxx" data-type="text" data-min="4" minlength="4" value="123455">
+        <div class="requirements">Password must be mininum 4 characters</div>
+    </label>
     <button id="btnSignup">Signup</button>
 </form>
 

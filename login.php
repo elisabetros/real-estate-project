@@ -72,8 +72,14 @@ require_once(__DIR__.'/components/top.php');
 <form action="" method="POST" id="frmLogin">
     <label for=""><input type="radio" name="loginType" value="user" required>Log in as a user</label>
     <label for=""><input type="radio" name="loginType" value="agent" required>Log in as a agent</label>
-    <label for="">Email<input type="text" name="txtEmail" placeholder="jane@example.com" data-type="email" value="frer@e.com"></label>
-    <label for="">Password (min 4 characters)<input type="password" name="txtPassword" placeholder="xxxxxx" data-type="text" data-min="4" minlength="4" value="password"></label>
+    <label for="">Email
+        <input type="text" name="txtEmail" placeholder="jane@example.com" data-type="email" value="frer@e.com">
+        <div class="requirements">Email must be at least 1 charachter, include @ a . and a domain name</div>
+    </label>
+    <label for="">Password (min 4 characters)
+        <input type="password" name="txtPassword" placeholder="xxxxxx" data-type="text" data-min="4" minlength="4" value="password">
+        <div class="requirements">Password must be mininum 4 characters</div>
+    </label>
     <button id="btnLogin">Login</button>
 </form>
 

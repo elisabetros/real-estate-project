@@ -20,33 +20,34 @@ if($_POST){
         sendError('Price invalid', __LINE__);
     }
     $aAllowedExtensions = ['gif', 'jpg', 'jpeg', 'png'];
-foreach($_FILES as $aImageFile){
-    $sExtension= pathinfo($aImageFile['name'],PATHINFO_EXTENSION);
+
+    $sExtension= pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
     $sExtension= strtolower($sExtension); //convert extension to lower case
     if(!in_array($sExtension, $aAllowedExtensions)){ 
         sendError('the file must be an png, gif, jpg or jpeg', __LINE__); 
     }
     //TODO validate length of price, address zip
-}
+
 }
 
-// foreach($_FILES as $aImageFile){
-    $sExt=  pathinfo($aImageFile['name'])['extension']; // gets the extension of a file
-    $imgProperty = $aImageFile['tmp_name'];
-    move_uploaded_file($imgProperty, __DIR__.'/../images/'.$aImageFile['name']); 
-    // }
+$sUniqueImageName = uniqid();
+$imgProperty = $_FILES['image']['tmp_name'];
+move_uploaded_file($imgProperty, __DIR__.'/../images/'.$sUniqueImageName.'.'.$sExtension); 
+   
 
 $_SESSION['user']->id = '5d77fc609e013';
+$sPropertyId = uniqid();
+
 
 $jProperty = new stdClass();
 $jProperty->agent = $_SESSION['user']->id;
 $jProperty->address = $_POST['txtAddress'];
 $jProperty->price = $_POST['txtPrice'];
 $jProperty->zip = $_POST['txtZip'];
-$jProperty->image = 'image/'.$_FILES['image']['name'];
-
-// echo json_encode($jProperties);
-// echo $_FILES['image']['name'];
+$jProperty->image = 'image/'.$sUniqueImageName.'.'.$sExtension;
+$jProperty->id = $sPropertyId;
+// echo substr($jProperty->image,4,2 );
+// echo json_encode($jProperties)
 
 
 $sjProperties = file_get_contents(__DIR__.'/../data/properties.json');
@@ -60,7 +61,7 @@ $sjProperties = json_encode($jProperties, JSON_PRETTY_PRINT);
 file_put_contents(__DIR__.'/../data/properties.json', $sjProperties);
 
 
-
+echo $jProperties;
 
 
 /****************/

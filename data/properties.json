@@ -1,16 +1,56 @@
 [
     {
         "agent": "5d77fc609e013",
-        "address": "address 3000",
-        "price": "2200000",
-        "zip": "2100",
-        "image": "image\/3.jpg"
+        "address": "Rymarkvej 100",
+        "price": "220000",
+        "zip": "2800",
+        "image": "images\/5d7a00b2ae838.jpg",
+        "id": "5d7a00b2af25f",
+        "marker":{
+            "geometry":{
+                "coordinates":[12.537515, 55.705493],
+                "type":"Point"
+                },
+            "properties":{
+                "iconSize":[20,20]
+                },
+            "type":"Feature"
+        }
     },
     {
         "agent": "5d77fc609e013",
-        "address": "Norrebrogade 3",
-        "price": "2200000",
-        "zip": "2100",
-        "image": "image\/4.jpg"
+        "address": "Norrebrogade 500",
+        "price": "1900000",
+        "zip": "2400",
+        "image": "images\/5d7a00c6df7b8.jpg",
+        "id": "5d7a00c6e02d2",
+        "marker":{
+            "geometry":{
+                "coordinates":[12.548515, 55.714493],
+                "type":"Point"
+                },
+            "properties":{
+                "iconSize":[20,20]
+                },
+            "type":"Feature"
+        }
+    },
+    {
+        "agent": "5d77fc609e013",
+        "address": "Lyngbyvej 140",
+        "price": "5000",
+        "zip": "2400",
+        "image": "images\/5d7a00e53f075.jpg",
+        "id": "5d7a00e53fbe0",
+        "marker":{
+            "geometry":{
+                "coordinates":[12.566515, 55.705193],
+                "type":"Point"
+                },
+            "properties":{
+                "iconSize":[20,20]
+                },
+            "type":"Feature"
+        }
     }
 ]
