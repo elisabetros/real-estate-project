@@ -44,9 +44,10 @@ if($_SESSION){
         $jUser->email = strtolower($_POST['txtEmail']);
         $jUser->password = $_POST['txtPassword'];
         $jUser->id = uniqid();
+        $jUser->userType = $_POST['signUpType'];
         // echo json_encode($jUser);
         //  get data from file
-        $sjData = file_get_contents(__DIR__.'/data/'.$_POST['signUpType'].'.json');
+        $sjData = file_get_contents(__DIR__.'/data/users.json');
         // echo $sjData;
         $jData = json_decode($sjData);
         // add new data from form in data object
@@ -54,7 +55,7 @@ if($_SESSION){
         // echo json_encode($jData);
         $sjData = json_encode($jData, JSON_PRETTY_PRINT);
         // put all data in file
-        file_put_contents(__DIR__.'/data/'.$_POST['signUpType'].'.json', $sjData);
+        file_put_contents(__DIR__.'/data/users.json', $sjData);
         // echo $sjData;
         // start session for the new user?
         //TODO send welcoming email

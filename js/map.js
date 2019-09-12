@@ -67,3 +67,24 @@ function addActiveClassToProperty(id){
 }
 
 
+let btnLikeProperty = document.querySelectorAll(".heart");
+btnLikeProperty.forEach(btn => {
+    btn.addEventListener('click', function(){
+        propertyId = event.target.parentElement.id
+        likeProperty(propertyId.substring(2))
+    })
+});
+
+function likeProperty(id){
+
+
+    $.ajax({
+        url:"api/api-user-like-property.php",
+        method:"POST",
+        data:{'propertyId': id}
+    }).done(function(response){
+        console.log(response)
+    }).fail(function(){
+        console.log('failed');
+    })
+}

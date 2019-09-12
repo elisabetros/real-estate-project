@@ -15,8 +15,3 @@ function openModal(){
         modal.style.display="none";
     })
 }
-
-function deleteProfile(){
-    console.log('I will delete you!');
-    
-}

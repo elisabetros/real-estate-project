@@ -2,7 +2,7 @@
 session_start();
 
 if($_SESSION){
-    header('location:user-profile.php');
+    header('location:profile.php');
 }
 (function(){
     if($_POST){
@@ -36,7 +36,7 @@ if($_SESSION){
 
 
         //  get data from file
-        $sjData = file_get_contents(__DIR__.'/data/'.$_POST['loginType'].'s.json');
+        $sjData = file_get_contents(__DIR__.'/data/users.json');
         // echo $sjData;
         $jData = json_decode($sjData);
         // // check if user exists
@@ -47,7 +47,7 @@ if($_SESSION){
                 unset($jUser->password);
                 $_SESSION['user'] = $jUser;
                 // echo json_encode($_SESSION['user']);
-                header('location:'.$_POST['loginType'].'-profile.php');
+                header('location:profile.php');
                 // $blUserMatch = 1;
             }
         }

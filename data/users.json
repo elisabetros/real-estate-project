@@ -3,18 +3,63 @@
         "name": "Freyr",
         "email": "frer@e.com",
         "password": "password",
-        "id": "5d77fc81cecc5"
+        "id": "5d77fc81cecc5",
+        "userType": "user"
+       
     },
     {
         "name": "Freyja",
         "email": "freas@e.com",
         "password": "PASSWord",
-        "id": "5d77fcc3b73cf"
+        "id": "5d77fcc3b73cf",
+        "userType": "user"
     },
     {
         "name": "mike",
         "email": "mike@mike.com",
         "password": "password",
-        "id": "5d7902c31582e"
+        "id": "5d7902c31582e",
+        "userType": "user"
+    },
+    {
+        "name": "Anna",
+        "email": "anna@e.com",
+        "password": "password",
+        "id": "5d77db766605a",
+        "userType": "agent"
+    },
+    {
+        "name": "Elisabet",
+        "email": "El@el.com",
+        "password": "password",
+        "id": "5d77fb451239d",
+        "userType": "agent"
+    },
+    {
+        "name": "adfsdfsd",
+        "email": "sdfsdfsdf@ss.com",
+        "password": "eeeeesdfsdf",
+        "id": "5d7893928fa27"
+    },
+    {
+        "name": "paasdfasdf",
+        "email": "asdfasdf@gmal.c",
+        "password": "passsword",
+        "id": "5d7894d4a7620",
+        "userType": "agent"
+    },
+    {
+        "name": "janet",
+        "email": "janet@jane.com",
+        "password": "password",
+        "id": "5d7902268b116",
+        "userType": "agent"
+    },
+    {
+        "name": "patrick",
+        "email": "",
+        "password": "12345",
+        "id": "5d790d9e638d6",
+        "userType": "agent"
     }
 ]

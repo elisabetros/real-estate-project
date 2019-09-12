@@ -22,26 +22,44 @@ const formToUpload = document.querySelector("#frmNewProperty");
 
 btnAddProperty.addEventListener('click', function(){
     event.preventDefault();
-    let address  = document.querySelector('input[name="txtAddress"]').value
-    let zip = document.querySelector('input[name=txtZip]').value;
+    let address  = document.querySelector('input[name=address]').value
+    let zip = document.querySelector('input[name=zip]').value
     let image = document.querySelector('input[name=image]').files
-    let price = document.querySelector('input[name=txtPrice]').value
-
-    let formData = {
-        "txtAddress":address,
-        "image": image,
-        "txtPrice":price,
-        "txtZip" :zip
-    }
-    console.log(formData )
+    let price = document.querySelector('input[name=price]').value
+console.log(image[0]);
+    // let formData = {
+    //     "address":address,
+    //     "image": image[0],
+    //     "price":price,
+    //     "zip" :zip
+    // }
+    let formData = new FormData();
+    formData.append('address', address);
+    formData.append('price', price);
+    formData.append('zip', zip);
+    formData.append('image', image[0]);
+    console.log(formData);  
 
     $.ajax({
-        url: 'api/api-create-property.php',
-        method : "POST",
-        data : $('.hiddenForm').serialize() 
-    }).done(function(jData){
-        console.log(jData);
+        "url":"data/properties.json",
+        "method": "POST",
+        "data": {
+                "address":address,
+                "image": image[0],
+                "price":price,
+                "zip" :zip
+            },
+        "dataType":"JSON"
+
+    }).done(function(data){
+           console.log(data);
+    
     }).fail(function(){
-        console.log('failed to fetch');
+        console.log('request failed');
     })
+    
 });
+
+
+
+

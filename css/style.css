@@ -100,10 +100,7 @@ a.active{
     width: 100%;
     z-index: 0;
 }
-#properties{
-    width: 100%;
-    /* background:rebeccapurple; */
-}
+
 
 .marker {
     display: block;
@@ -119,16 +116,33 @@ a.active{
 #properties{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 5%;
-    padding: 0 5%;
+    column-gap: .5em;
+    padding: 0 .5em;
     overflow-y: scroll;
+    height:auto;
+}
+#properties h1{
+    grid-column: 1/-1;
 }
 .property{
+    display:grid;
+    /* grid-template-columns: 2fr 1fr; */
     width:100%;
     cursor: pointer;
     border-radius: 5px;
+    margin-bottom:.5em;
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    position: relative;
+}
+.property p{
+    margin: 0 .5em .5em;
+}
+.property h3{
+    margin: 0 .5em; 
 }
 .property img{
+    border-radius: 5px 5px 0 0 ;
+    grid-column:1/-1;
     width:100%;
     height:150px;
     object-fit: cover;
@@ -146,6 +160,22 @@ a.active{
     width: 25px;
 }
 
+
+.heart {
+    fill: red;
+    bottom: 35%;
+    right:5%;
+    width: 25px;
+    position: absolute;
+    cursor:pointer;
+
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
 
 /*****   FORM    *****/
 
@@ -214,7 +244,14 @@ form .requirements {
   font-size: 80%;
 }
 
-/*****      PROFILE PAGE USER AND AGENT     *****/
+/*****      PROFILE PAGE     *****/
+
+#user >#agentForm, #user >#agentProperties {
+    display: none;
+}
+#agent > #likedProperties{
+    display: none;
+}
 
 .hiddenForm{
     display:none;

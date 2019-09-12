@@ -4,19 +4,19 @@ if(!$_SESSION){
     sendError('No agent logged in', __LINE__);
 }
 if($_POST){
-    if(empty($_POST['txtAddress'])){
+    if(empty($_POST['address'])){
         sendError('Address missing', __LINE__);
     }
-    if(empty($_POST['txtPrice'])){
+    if(empty($_POST['price'])){
         sendError('Address missing', __LINE__);
     }
-    if(empty($_POST['txtZip'])){
+    if(empty($_POST['zip'])){
         sendError('Address missing', __LINE__);
     }
     if(empty($_FILES['image'])){
         sendError('image missing', __LINE__);
     }
-    if(!ctype_digit($_POST['txtPrice'])){
+    if(!ctype_digit($_POST['price'])){
         sendError('Price invalid', __LINE__);
     }
     $aAllowedExtensions = ['gif', 'jpg', 'jpeg', 'png'];
@@ -35,17 +35,24 @@ $imgProperty = $_FILES['image']['tmp_name'];
 move_uploaded_file($imgProperty, __DIR__.'/../images/'.$sUniqueImageName.'.'.$sExtension); 
    
 
-$_SESSION['user']->id = '5d77fc609e013';
+// $_SESSION['user']->id = '5d77db766605a';
 $sPropertyId = uniqid();
 
 
 $jProperty = new stdClass();
 $jProperty->agent = $_SESSION['user']->id;
-$jProperty->address = $_POST['txtAddress'];
-$jProperty->price = $_POST['txtPrice'];
-$jProperty->zip = $_POST['txtZip'];
+$jProperty->address = $_POST['address'];
+$jProperty->price = $_POST['price'];
+$jProperty->zip = $_POST['zip'];
 $jProperty->image = 'image/'.$sUniqueImageName.'.'.$sExtension;
 $jProperty->id = $sPropertyId;
+$jProperty->marker = new stdClass();
+$jProperty->marker->geometry = new stdClass();
+$jProperty->marker->geometry->coordinates = [12.566515, 55.705193];
+$jProperty->marker->geometry->type = "Point";
+$jProperty->marker->type = "Feature";
+
+
 // echo substr($jProperty->image,4,2 );
 // echo json_encode($jProperties)
 
