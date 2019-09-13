@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+$sActive= 'login';
+$sPageTitle = 'Login';
+require_once(__DIR__.'/components/top.php');
+
 
 if($_SESSION){
     header('location:profile.php');
@@ -61,10 +65,6 @@ if($_SESSION){
 
 
 
-$sActive= 'login';
-$sPageTitle = 'Login';
-require_once(__DIR__.'/components/top.php');
-
 ?>
 
 <h1>Welcome to Real Estate</h1>
@@ -73,14 +73,14 @@ require_once(__DIR__.'/components/top.php');
     <label for=""><input type="radio" name="loginType" value="user" required>Log in as a user</label>
     <label for=""><input type="radio" name="loginType" value="agent" required>Log in as a agent</label>
     <label for="">Email
-        <input type="text" name="txtEmail" placeholder="jane@example.com" data-type="email" value="frer@e.com">
+        <input type="text" name="txtEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="jane@example.com"  value="frer@e.com" required>
         <div class="requirements">Email must be at least 1 charachter, include @ a . and a domain name</div>
     </label>
     <label for="">Password (min 4 characters)
-        <input type="password" name="txtPassword" placeholder="xxxxxx" data-type="text" data-min="4" minlength="4" value="password">
+        <input type="password" name="txtPassword" placeholder="xxxxxx"  minlength="4" value="password" required>
         <div class="requirements">Password must be mininum 4 characters</div>
     </label>
-    <button id="btnLogin">Login</button>
+    <button id="btnLogin" disabled>Login</button>
 </form>
 
 

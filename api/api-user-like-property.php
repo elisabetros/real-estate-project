@@ -7,33 +7,30 @@ if(!$_SESSION){
 if($_SESSION['user']->userType !== 'user'){
     sendError('not a user', __LINE__);
 }
-if(empty($_POST['id'])){
+if(empty($_GET['id'])){
     sendError('no data', __LINE__);
 }
 
 $sjProperties = file_get_contents(__DIR__.'/../data/properties.json');
 $jProperties = json_decode($sjProperties);
-// $sjUsers = file_get_contents(__DIR__.'/../data/users.json');
-// $jUsers = json_decode($sjUsers);
-// echo json_encode($jUsers);
 // echo json_encode($jProperties);
+$bl=0;
 
 foreach($jProperties as $jProperty){
-    if ($_POST['id'] == $jProperty->id){
-        $jProperty->userLikes = [];
+    if ($_GET['id'] == $jProperty->id){
         array_push( $jProperty->userLikes, $_SESSION['user']->id);
-       
-    }
+        $bl=1;
+       }
 }
 
-// if($bl==0){
-//     sendError('no match', __LINE__);
-// }
+if($bl==0){
+    sendError('no match', __LINE__);
+}
 
 // foreach($jUsers as $jUser){
 //     if ($_SESSION['user']->id == $jUser->id){
 //         $jUser->likedProperties = [];
-//         array_push(  $jUser->likedProperties, $_POST['id']);
+//         array_push(  $jUser->likedProperties, $_GET['id']);
 //         $_SESSION['user'] = $jUser;
 //         // echo json_encode($_SESSION['user']);
 //     }

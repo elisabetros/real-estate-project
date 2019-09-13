@@ -37,7 +37,7 @@ require_once(__DIR__.'/components/top.php');
 
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
   
 </body>

@@ -5,12 +5,15 @@
     ?>
 <div id="frontpage">
     <h1>Find Your New House!</h1>
-    <input name="txtSearch" type="text" class="searchBar" placeholder="Search by zip code">
+    <form id="frmSearch" method="POST">
+    <input name="txtSearch" type="text" class="searchBar noValidate" placeholder="Search by zip code">
     <button>Search</button>
+    </form>
+    <div id="searchResults"></div>
 </div>
    
 
 
-    
+    <script src="js/search.js"></script>
 </body>
 </html>

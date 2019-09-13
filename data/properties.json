@@ -15,7 +15,10 @@
                 "type": "Point"
             },
             "type": "Feature"
-        }
+        },
+        "userLikes": [
+            "5d77fc81cecc5"
+        ]
     },
     {
         "agent": "5d7902268b116",
@@ -33,7 +36,10 @@
                 "type": "Point"
             },
             "type": "Feature"
-        }
+        },
+        "userLikes": [
+            "5d77fc81cecc5"
+        ]
     },
     {
         "agent": "5d7902268b116",
@@ -55,5 +61,45 @@
         "userLikes": [
             "5d77fc81cecc5"
         ]
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "Emdrupvej 100",
+        "price": "5000",
+        "zip": "2100",
+        "image": "images\/5d7b76ce2481a.jpg",
+        "id": "5d7b76ce25c90",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "Emdrup 100",
+        "price": "5999999",
+        "zip": "2830",
+        "image": "images\/5d7b779abb8a3.jpg",
+        "id": "5d7b779abc47e",
+        "userLikes": [
+            "5d77fc81cecc5"
+        ],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
     }
 ]

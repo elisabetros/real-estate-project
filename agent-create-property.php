@@ -32,7 +32,7 @@ if($_POST){
 
 $sUniqueImageName = uniqid();
 $imgProperty = $_FILES['image']['tmp_name'];
-move_uploaded_file($imgProperty, __DIR__.'/../images/'.$sUniqueImageName.'.'.$sExtension); 
+move_uploaded_file($imgProperty, __DIR__.'/images/'.$sUniqueImageName.'.'.$sExtension); 
    
 
 // $_SESSION['user']->id = '5d77db766605a';
@@ -44,8 +44,9 @@ $jProperty->agent = $_SESSION['user']->id;
 $jProperty->address = $_POST['address'];
 $jProperty->price = $_POST['price'];
 $jProperty->zip = $_POST['zip'];
-$jProperty->image = 'image/'.$sUniqueImageName.'.'.$sExtension;
+$jProperty->image = 'images/'.$sUniqueImageName.'.'.$sExtension;
 $jProperty->id = $sPropertyId;
+$jProperty->userLikes = [];
 $jProperty->marker = new stdClass();
 $jProperty->marker->geometry = new stdClass();
 $jProperty->marker->geometry->coordinates = [12.566515, 55.705193];
@@ -57,18 +58,18 @@ $jProperty->marker->type = "Feature";
 // echo json_encode($jProperties)
 
 
-$sjProperties = file_get_contents(__DIR__.'/../data/properties.json');
+$sjProperties = file_get_contents(__DIR__.'/data/properties.json');
 $jProperties = json_decode($sjProperties);
 // echo $sjProperties;
 
 array_push($jProperties, $jProperty);
-echo json_encode($jProperties);
+// echo json_encode($jProperties);
 
 $sjProperties = json_encode($jProperties, JSON_PRETTY_PRINT);
-file_put_contents(__DIR__.'/../data/properties.json', $sjProperties);
+file_put_contents(__DIR__.'/data/properties.json', $sjProperties);
 
-
-echo $jProperties;
+sleep(3);
+header('location:profile.php');
 
 
 /****************/

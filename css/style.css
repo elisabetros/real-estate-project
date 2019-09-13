@@ -22,7 +22,7 @@ h1, h2{
 /****   MENU    *******/
 nav{
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     align-content: center;
     padding: 0 1em;
     height:50px;
@@ -38,7 +38,7 @@ nav>a{
 a#logo{
     text-align: left; 
 }
-nav>a:visited{
+a:visited{
     color:black;
 }
 a.active{
@@ -54,7 +54,7 @@ a.active{
 }
 
 /*****  Reusable Classes    *****/
-.btnLogout, button{
+ button{
     height:35px;
     line-height: 35px;
     margin: 5% auto;
@@ -68,18 +68,40 @@ a.active{
 }
 
 /*****   INDEXPAGE    *****/
-#frontpage {
+#searchResults{
+    display: none;
+    width:300px;
+    height:auto;
+    margin: 0 10.2em;
+    padding: 1%;
+    background: #eee;
+    border-radius: 0 0 5px 5px
+}
+.searchLink{
+    text-align: left;
+    display: block;
+    color:#009688;
+    font-size:110%;
+    border-bottom:1px solid #ddd;
+}
+#frontpage{
+    margin:10em;
+}
+#frmSearch {
     display: grid;
     grid-template-columns: 1fr .1fr;
     grid-gap: 10px;
     text-align: center;
     justify-content: center;
-    margin:10em ;
+    margin: 1em 10em 0;
+}
+#frmSearch button{
+    margin:0;
 }
 #frontpage > h1{
     grid-column: 1/-1;
 }
-#frontpage >.searchBar{
+.searchBar{
     display: block;
     font-size: 120%;
     height:45px;
@@ -94,7 +116,6 @@ a.active{
     position: fixed;
     top:70px;
     left:0;
-    /* height: */
 }
 #map{
     width: 100%;
@@ -108,7 +129,7 @@ a.active{
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
-    background:red;
+    background:  #960000;
     width:15px;
     height:15px;
 }
@@ -148,7 +169,6 @@ a.active{
     object-fit: cover;
 }
 .activeProperty{
-    /* border: 5px solid red; */
     box-shadow:0 4px 10px rgba(0,0,0,.5);
     transform:scale(1.05);
     z-index: 1000;
@@ -162,13 +182,18 @@ a.active{
 
 
 .heart {
-    fill: red;
+    fill: #960000;
+    opacity: .5;
     bottom: 35%;
     right:5%;
     width: 25px;
     position: absolute;
     cursor:pointer;
-
+    transition: all .1s;
+  }
+  .heart:hover{
+      transform:scale(1.07);
+      opacity:1;
   }
   
   @keyframes pulse {
@@ -185,6 +210,9 @@ a.active{
     align-content: center;
     grid-gap: 10px;
 }
+.profileInformation> form{
+    display: block;
+}
 /* button{
     border-radius: 5px;
     padding:10px 5px;
@@ -197,10 +225,17 @@ button:disabled{
 label {
     font-weight: bold;
 }
+
+textarea {
+   width: 100%;
+   border: 0;
+   border-radius: 5px;
+   padding:10px 10px 10px 30px;
+   background: #eee;
+}
 input[type="text"],
-input[type="email"],
 input[type="password"],
-input[type="number"] {
+input[type="number"]{
    width: 100%;
    border: 0;
    border-radius: 5px;
@@ -210,9 +245,9 @@ input[type="number"] {
 }
 
 /*      FORM VALIDATION         */
- input[type="text"]:valid:not(:placeholder-shown),
- input[type="email"]:valid:not(:placeholder-shown),
- input[type="password"]:valid:not(:placeholder-shown){
+ input[type="text"]:valid:not(:placeholder-shown):not(.noValidate),
+ input[type="password"]:valid:not(:placeholder-shown):not(.noValidate),
+ textarea:valid:not(:placeholder-shown):not(.noValidate){
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
   background-size: 20px;
   background-repeat: no-repeat;
@@ -222,18 +257,19 @@ input[type="number"] {
 }
 
  input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
- input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
- input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
-  background: pink;
+ input[type="password"]:invalid:not(:focus):not(:placeholder-shown),
+ textarea:invalid:not(:focus):not(:placeholder-shown),
+ .inputError:not(:focus) {
+  background: pink !important;
 }
  
 input[type="text"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
-input[type="email"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
-input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements {
+input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requirements,
+.inputError:not(:focus) ~ .requirements{
   max-height: 200px;
   /* padding:3px 10px 10px 30px; */
 }
-form .requirements {
+.requirements {
   padding: 0 30px 0 30px;
   color: #999;
   max-height: 0;
@@ -273,21 +309,59 @@ form .requirements {
     align-self:center;
     text-align: left;
 }
-#agentProperties{
+#agentProperties, #likedProperties{
     display:grid;
     grid-template-columns: 1fr 1fr;
     width:100%;
     grid-gap:3%;
     /* overflow-y:scroll;  */
 }
-#agentProperties h2{
+#agentProperties h2, #likedProperties h2{
     grid-column:1/-1;
 }
-#agentProperties img{
+#agentProperties img, #likedProperties img{
     width:100%;
 }
-    
 
+.btnLogout, .btnDeleteProfile{
+    margin-left:60%;
+    color:white !important;
+}
+.btnDeleteProfile{
+    background:#960000;
+}
+.profileInformation{
+    margin:5% 0;
+}
+/* .profileInformation div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap:5px;
+    margin-top:2%;
+}*/
+.hidden{
+    visibility:hidden;
+}
+.profileInformation h2{
+    text-align: left;
+    display:inline;
+} 
+
+input.noValidate{
+    background:none;
+    margin:0;
+    padding:1%;
+    font-size: 110%;
+}
+.editInfo{
+    display:inline;
+    /* width:20px; */
+    margin-left:5%; ;
+}
+.buttonContainer{
+    text-align: right;
+    margin-bottom:5%;
+}
 /*****    MODAL    *****/
 .modal{
     position:fixed;
@@ -304,8 +378,7 @@ form .requirements {
     border-radius:10px;
     margin:10vh auto;
     width:70vw;
-    height:30vh;
-    /* padding:3%; */
+    height:40vh;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -313,12 +386,40 @@ form .requirements {
 .modalContent>div{
     text-align:center;
 }
-.modalContent>div>button{
-    padding:2% 8%;
+.modalContent>h1{
+    font-size:100%;
+    margin:5%;
+}
+.modalContent>div>a{
     margin: 5%;
 }
-
 .continueDelete{
     background:#960000;
+}
+.backToProfile, .btnLogout{
+    background: #009688;
+}
+.continueDelete, .backToProfile, .btnLogout{
+    padding: 8px 40px;
+    width: 50px;
+    height: 100px;
+    color: white !important;
+    border-radius: 5px;
+}
 
+
+/*****    CONTACT PAGE    *****/
+#emailContainer{
+    margin:5% 0;
+}
+#emailContainer h2:nth-child(2){
+    margin-bottom: 2%;
+}
+
+.error{
+    color:red;
+}
+.error a{
+    color:#009688;
+    font-style: italic;
 }

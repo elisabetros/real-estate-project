@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_SESSION){
+    $sMenuTitle = 'Profile';
+}else{
+    $sMenuTitle = 'Login';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +29,9 @@
     <nav>
     <a id="logo"  href="index.php">REAL ESATATE</a>
     <a class="<?= $sActive=='properties'?'active':''; ?>" href="properties.php">Properties</a>  
-    <a class="<?= $sActive=='login'?'active':''; ?>" href="login.php">Login</a>
+    <a class="<?= $sActive=='login'?'active':''; ?>" href="<?=strtolower($sMenuTitle)?>.php"><?=$sMenuTitle?></a>
+    <a class="<?= $sActive=='contact-us'?'active':''; ?>" href="contact-us.php">Contact Us</a>
     <!-- <a class="logout" href="logout.php">Logout</a> -->
     <a class="<?= $sActive=='signup'?'active':''; ?>" href="signup.php">Signup</a>
     </nav>
-
 

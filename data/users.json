@@ -1,11 +1,10 @@
 [
     {
-        "name": "Freyr",
+        "name": "freyr",
         "email": "frer@e.com",
         "password": "password",
         "id": "5d77fc81cecc5",
         "userType": "user"
-       
     },
     {
         "name": "Freyja",
@@ -61,5 +60,33 @@
         "password": "12345",
         "id": "5d790d9e638d6",
         "userType": "agent"
+    },
+    {
+        "name": "mac",
+        "email": "mac@mac.com",
+        "password": "password",
+        "id": "5d7b921c76f2a",
+        "userType": "users"
+    },
+    {
+        "name": "macdonald",
+        "email": "macd@mac.com",
+        "password": "123455",
+        "id": "5d7b92a11e866",
+        "userType": "agents"
+    },
+    {
+        "name": "macdonald",
+        "email": "macd@mac.com",
+        "password": "123455",
+        "id": "5d7b92bc122aa",
+        "userType": "agents"
+    },
+    {
+        "name": "tina",
+        "email": "tina@t.com",
+        "password": "123455",
+        "id": "5d7baae2a7fac",
+        "userType": "users"
     }
 ]
