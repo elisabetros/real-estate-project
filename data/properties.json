@@ -46,7 +46,10 @@
         "zip": "2100",
         "image": "images\/5d7cdd6e3ee7f.jpg",
         "id": "5d7cdd6e3f9b5",
-        "userLikes": [],
+        "userLikes": [
+            "5d7d2e608da7d",
+            "5d7d2e608da7d"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -65,7 +68,11 @@
         "zip": "2400",
         "image": "images\/5d7cdf10b8f0b.jpg",
         "id": "5d7cdf10b99d2",
-        "userLikes": [],
+        "userLikes": [
+            "5d7d2e608da7d",
+            "5d7d2e608da7d",
+            "5d7d2e608da7d"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -84,7 +91,9 @@
         "zip": "2800",
         "image": "images\/5d7cdf3b00769.jpg",
         "id": "5d7cdf3b010cc",
-        "userLikes": [],
+        "userLikes": [
+            "5d7d2e608da7d"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -103,7 +112,9 @@
         "zip": "2843",
         "image": "images\/5d7ce02e9fd15.jpg",
         "id": "5d7ce02ea0782",
-        "userLikes": [],
+        "userLikes": [
+            "5d7d2e608da7d"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -122,7 +133,9 @@
         "zip": "2100",
         "image": "images\/5d7cece572073.jpg",
         "id": "5d7cece573352",
-        "userLikes": [],
+        "userLikes": [
+            "5d7d2e608da7d"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [

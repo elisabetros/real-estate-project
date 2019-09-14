@@ -76,8 +76,8 @@ if($_SESSION){
 <h1>Welcome to Real Estate</h1>
 <h2>Please signup</h2>
 <form method="POST" id="frmSignup">
-    <label for=""><input type="radio" name="signUpType" value="user"  required>Sign up as a user</label>
-    <label for=""><input type="radio" name="signUpType" value="agent"  required>Sign up as a agent</label>
+    <label class="radioLabel"><input type="radio" name="signUpType" value="user"  required>Sign up as a user</label>
+    <label class="radioLabel"><input type="radio" name="signUpType" value="agent"  required>Sign up as a agent</label>
     <label for="">Name (2 to 20 characters)
         <input type="text" name="txtName" placeholder="Jane" maxlength="20" required>
         <div class="requirements">Name must be 2 to 20 characthers</div>

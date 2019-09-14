@@ -14,9 +14,9 @@ map.addControl(new mapboxgl.NavigationControl());
 fetch("data/properties.json")
         .then(res => res.json())
         .then(jProperties => {
-        console.log(jProperties);
+        // console.log(jProperties);
         jProperties.forEach(jProperty=>{
-            console.log(jProperty);   
+            // console.log(jProperty);   
             let el = document.createElement('a');
             el.setAttribute('href', '#v-'+ jProperty.id);
             el.className = 'marker'

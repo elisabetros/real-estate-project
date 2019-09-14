@@ -10,7 +10,7 @@ const searchInput = document.querySelector('.searchBar');
 const divResults = document.querySelector('#searchResults');
 const searchUrl = 'api/api-search.php';
 searchInput.addEventListener('input', function(){
-    console.log('searching')
+    // console.log('searching')
     if(searchInput.value.length == 0){
         searchInput.classList.remove('error');
         divResults.style.display = 'none'; 

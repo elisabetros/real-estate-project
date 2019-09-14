@@ -88,5 +88,12 @@
         "password": "123455",
         "id": "5d7baae2a7fac",
         "userType": "user"
+    },
+    {
+        "name": "kermit",
+        "email": "kermit@kerm.com",
+        "password": "password",
+        "id": "5d7d2e608da7d",
+        "userType": "user"
     }
 ]

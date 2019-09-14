@@ -71,8 +71,8 @@ if($_SESSION){
 <h1>Welcome to Real Estate</h1>
 <h2>Please Login</h2>
 <form action="" method="POST" id="frmLogin">
-    <label for=""><input type="radio" name="loginType" value="user" required>Log in as a user</label>
-    <label for=""><input type="radio" name="loginType" value="agent" required>Log in as a agent</label>
+    <label class="radioLabel"><input type="radio" name="loginType" value="user" required>Log in as a user</label>
+    <label class="radioLabel"><input type="radio" name="loginType" value="agent" required>Log in as a agent</label>
     <label for="">Email
         <input type="text" name="txtEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="jane@example.com"  value="frer@e.com" required>
         <div class="requirements">Email must be at least 1 charachter, include @ a . and a domain name</div>

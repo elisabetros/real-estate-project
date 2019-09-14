@@ -16,17 +16,17 @@ $jProperties = json_decode($sjProperties);
 // echo json_encode($jProperties);
 $bl=0;
 
-foreach($jProperties as $jProperty){
+foreach($jProperties as $index =>$jProperty){
     if ($_GET['id'] == $jProperty->id){
-        if(!in_array($_SESSION['user']->id, $jProperty->userLikes)){
-            array_push( $jProperty->userLikes, $_SESSION['user']->id);
+        if(in_array($_SESSION['user']->id, $jProperty->userLikes)){
+            array_splice($jProperty->userLikes, $index, 1);
             $bl=1;
         }
        }
 }
 
 if($bl==0){
-    sendError('no match or already liked', __LINE__);
+    sendError('no match or not already liked', __LINE__);
 }
 
 // foreach($jUsers as $jUser){
@@ -40,7 +40,8 @@ if($bl==0){
 
 $sjProperties = json_encode($jProperties, JSON_PRETTY_PRINT);
 file_put_contents( __DIR__.'/../data/properties.json', $sjProperties);
-echo '{"status":1, "message": "Property liked", "line":'.__LINE__.'}';
+
+echo '{"status":1, "message": "Property unliked", "line":'.__LINE__.'}';
 
 
 
