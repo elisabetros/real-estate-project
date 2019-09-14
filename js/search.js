@@ -36,7 +36,7 @@ searchInput.addEventListener('input', function(){
                     let zipLink = document.createElement('a');
                     zipLink.className='searchLink';
                     zipLink.textContent = match;
-                    zipLink.href="search.php?zip="+ match;
+                    zipLink.href="properties.php?zip="+ match;
                     divResults.append(zipLink);         // let div = "<div>${match}</div>" in jquery
                 });      
 

@@ -6,6 +6,7 @@ require_once(__DIR__.'/components/top.php');
 ?>
 
 <div id="emailContainer">
+    <div class="formContainer">
 <h2>Have questions or comments?</h2>
 <h2>Send us a line!</h2>
 <form action="" id="sendEmail" method="POST">
@@ -22,7 +23,7 @@ require_once(__DIR__.'/components/top.php');
 
 </form>
 </div>
-
+</div>
 
 <script src="js/send-email.js"></script>
 <script src="js/validate.js"></script>

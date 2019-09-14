@@ -1,10 +1,11 @@
-let form = document.querySelector('form');
+// let form = document.querySelector('form');
 let allInputs = document.querySelectorAll('input');
-let emailInput = form.querySelector('input[data-type=email]');
+let emailInput = document.querySelector('input[data-type=email]');
 const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 allInputs.forEach(input => {
     input.addEventListener('input', function(){
+        let form = input.parentElement.parentElement;
         console.log(form.checkValidity());
         if(emailInput){
             // console.log('there is an email attribute')
@@ -15,9 +16,6 @@ allInputs.forEach(input => {
                 emailInput.classList.add('inputError')
                 form.querySelector('button').disabled = true;
             }              
-
-
-       
         }
     if(form.checkValidity()){
         form.querySelector('button').disabled=false;

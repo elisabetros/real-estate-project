@@ -1,3 +1,5 @@
+
+
 let propertyElements = document.querySelectorAll('.property');
 propertyElements.forEach(propertyElement =>{
     propertyElement.addEventListener('click', function(){

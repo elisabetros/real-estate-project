@@ -43,7 +43,7 @@ $jProperties = json_decode($sjProperties);
     foreach($jProperties as $jProperty){
         if(in_array($sUserId, $jProperty->userLikes)){
             echo '
-            <div class="likedProperty">
+            <div class="property">
             <img src="'.$jProperty->image.'" alt="">
             <h3 class="propertyPrice">'.$jProperty->price.' kr.</h3>
             <p class="propertyAddress">'.$jProperty->address.', '.$jProperty->zip.'</p>
@@ -58,7 +58,7 @@ $jProperties = json_decode($sjProperties);
 
     <div id ="agentForm">
     <button id="btnShowFrm">Add Property</button>
-    <form action="agent-create-property.php" class="hiddenForm" id="frmNewProperty" method="POST" enctype="multipart/form-data">
+    <form  class="hiddenForm" id="frmNewProperty" method="POST" enctype="multipart/form-data">
         <span class="btnCloseFrm">X</span>
         <label>Image<input type="file" name="image" required >
         <div class="requirements">Image must be included</div></label>
@@ -86,12 +86,17 @@ $jProperties = json_decode($sjProperties);
         // echo $jProperty->agent;
         if($sUserId == $jProperty->agent){
             echo '
-            <div class="agentProperty" id="'.$jProperty->id.'">
+            <div class="property" id="'.$jProperty->id.'">
             <img src="'.$jProperty->image.'" alt="">
-            <h3 class="propertyPrice">'.$jProperty->price.' kr.</h3>
-            <p class="propertyAddress">'.$jProperty->address.', '.$jProperty->zip.'</p>
-            <a href="delete-property.php?id='.$jProperty->id.'" class="btnDeleteProperty">Delete Property</a>
-        </div>
+            <button class="updateProperty">Update Information</button>
+            <form method="Post">
+            <input type="text" name="newPrice" class="noValidate" value="'.$jProperty->price.' kr.">
+            <input type="text" name="newZip" class="noValidate" value="'.$jProperty->zip.'">
+            <input type="text" name="newAddress" class="noValidate" value="'.$jProperty->address.'">
+            <button class="hidden btnSaveInfoProp">Save</button>
+            </form>
+            <a  class="btnDeleteProperty">Delete Property</a>
+            </div>
             ';
         }
     }

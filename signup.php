@@ -25,7 +25,7 @@ if($_SESSION){
             return;
         }
         // check if the signUpType is a user or an agent
-        if($_POST['signUpType'] ==='users' || $_POST['signUpType'] ==='agents'  ){
+        if($_POST['signUpType'] ==='user' || $_POST['signUpType'] ==='agent'  ){
             // $sSignUpType = $_POST['signUpType'];
         }else{
             return;
@@ -71,12 +71,13 @@ if($_SESSION){
 
 
 ?>
-
+<div id="signupPage">
+<div class="formContainer">
 <h1>Welcome to Real Estate</h1>
 <h2>Please signup</h2>
 <form method="POST" id="frmSignup">
-    <label for=""><input type="radio" name="signUpType" value="users"  required>Sign up as a user</label>
-    <label for=""><input type="radio" name="signUpType" value="agents"  required>Sign up as a agent</label>
+    <label for=""><input type="radio" name="signUpType" value="user"  required>Sign up as a user</label>
+    <label for=""><input type="radio" name="signUpType" value="agent"  required>Sign up as a agent</label>
     <label for="">Name (2 to 20 characters)
         <input type="text" name="txtName" placeholder="Jane" maxlength="20" required>
         <div class="requirements">Name must be 2 to 20 characthers</div>
@@ -91,7 +92,8 @@ if($_SESSION){
     </label>
     <button id="btnSignup" disabled>Signup</button>
 </form>
-
+</div>
+</div>
 
     <script src="js/validate.js"></script>
 </body>

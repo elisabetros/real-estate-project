@@ -19,6 +19,15 @@ if($_POST){
     if(!ctype_digit($_POST['price'])){
         sendError('Price invalid', __LINE__);
     }
+    if(strlen($_POST['price'])<2 ||strlen($_POST['price'])>9999999999999 ){
+        sendError('Price invalid', __LINE__);
+    }
+    if(!ctype_digit($_POST['zip'])){
+        sendError('Zip invalid', __LINE__);
+    }
+    if(strlen($_POST['zip'])!= 4){
+        sendError('zip length wrong', __LINE__);
+    }
     $aAllowedExtensions = ['gif', 'jpg', 'jpeg', 'png'];
 
     $sExtension= pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
@@ -32,7 +41,7 @@ if($_POST){
 
 $sUniqueImageName = uniqid();
 $imgProperty = $_FILES['image']['tmp_name'];
-move_uploaded_file($imgProperty, __DIR__.'/images/'.$sUniqueImageName.'.'.$sExtension); 
+move_uploaded_file($imgProperty, __DIR__.'/../images/'.$sUniqueImageName.'.'.$sExtension); 
    
 
 // $_SESSION['user']->id = '5d77db766605a';
@@ -41,7 +50,7 @@ $sPropertyId = uniqid();
 
 $jProperty = new stdClass();
 $jProperty->agent = $_SESSION['user']->id;
-$jProperty->address = $_POST['address'];
+$jProperty->address = strtolower($_POST['address']);
 $jProperty->price = $_POST['price'];
 $jProperty->zip = $_POST['zip'];
 $jProperty->image = 'images/'.$sUniqueImageName.'.'.$sExtension;
@@ -58,7 +67,7 @@ $jProperty->marker->type = "Feature";
 // echo json_encode($jProperties)
 
 
-$sjProperties = file_get_contents(__DIR__.'/data/properties.json');
+$sjProperties = file_get_contents(__DIR__.'/../data/properties.json');
 $jProperties = json_decode($sjProperties);
 // echo $sjProperties;
 
@@ -66,12 +75,12 @@ array_push($jProperties, $jProperty);
 // echo json_encode($jProperties);
 
 $sjProperties = json_encode($jProperties, JSON_PRETTY_PRINT);
-file_put_contents(__DIR__.'/data/properties.json', $sjProperties);
+file_put_contents(__DIR__.'/../data/properties.json', $sjProperties);
 
-sleep(3);
-header('location:profile.php');
+// sleep(3);
+// header('location:profile.php');
 
-
+echo '{"status":1, "propertyId":"'. $jProperty->id.'", "image":"'.$jProperty->image.'"}';
 /****************/
 
 function sendError($message, $line){

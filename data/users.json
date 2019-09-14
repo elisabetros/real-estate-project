@@ -66,27 +66,27 @@
         "email": "mac@mac.com",
         "password": "password",
         "id": "5d7b921c76f2a",
-        "userType": "users"
+        "userType": "user"
     },
     {
         "name": "macdonald",
         "email": "macd@mac.com",
-        "password": "123455",
+        "password": "password",
         "id": "5d7b92a11e866",
-        "userType": "agents"
+        "userType": "agent"
     },
     {
         "name": "macdonald",
         "email": "macd@mac.com",
         "password": "123455",
         "id": "5d7b92bc122aa",
-        "userType": "agents"
+        "userType": "agent"
     },
     {
         "name": "tina",
         "email": "tina@t.com",
         "password": "123455",
         "id": "5d7baae2a7fac",
-        "userType": "users"
+        "userType": "user"
     }
 ]

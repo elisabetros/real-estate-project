@@ -66,7 +66,8 @@ if($_SESSION){
 
 
 ?>
-
+<div id="loginPage">
+    <div class="formContainer">
 <h1>Welcome to Real Estate</h1>
 <h2>Please Login</h2>
 <form action="" method="POST" id="frmLogin">
@@ -82,8 +83,9 @@ if($_SESSION){
     </label>
     <button id="btnLogin" disabled>Login</button>
 </form>
+</div>
 
-
+</div>
 <script src="js/validate.js"></script>
 </body>
 </html>

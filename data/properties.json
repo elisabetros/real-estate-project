@@ -1,37 +1,35 @@
 [
     {
-        "agent": "5d7902268b116",
-        "address": "Rymarkvej 100",
-        "price": "220000",
-        "zip": "2800",
-        "image": "images\/5d7a00b2ae838.jpg",
-        "id": "5d7a00b2af25f",
+        "agent": "5d7b92a11e866",
+        "address": "roadname 100",
+        "price": "250000",
+        "zip": "2790",
+        "image": "images\/5d7cddc2a8f9e.jpg",
+        "id": "5d7cddc2a98f1",
+        "userLikes": [],
         "marker": {
             "geometry": {
                 "coordinates": [
-                    12.537515,
-                    55.705493
+                    12.563575,
+                    55.701113
                 ],
                 "type": "Point"
             },
             "type": "Feature"
-        },
-        "userLikes": [
-            "5d77fc81cecc5"
-        ]
+        }
     },
     {
         "agent": "5d7902268b116",
-        "address": "Norrebrogade 500",
-        "price": "1900000",
-        "zip": "2400",
+        "address": "guldvej 550",
+        "price": "55000000",
+        "zip": "3780",
         "image": "images\/5d7a00c6df7b8.jpg",
         "id": "5d7a00c6e02d2",
         "marker": {
             "geometry": {
                 "coordinates": [
-                    12.548515,
-                    55.714493
+                    12.548115,
+                    55.774413
                 ],
                 "type": "Point"
             },
@@ -42,12 +40,32 @@
         ]
     },
     {
-        "agent": "5d7902268b116",
-        "address": "Lyngbyvej 140",
-        "price": "5000",
+        "agent": "5d7b92a11e866",
+        "address": "streetname 100",
+        "price": "500000000",
+        "zip": "2100",
+        "image": "images\/5d7cdd6e3ee7f.jpg",
+        "id": "5d7cdd6e3f9b5",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.576315,
+                    55.702143
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7b92a11e866",
+        "address": "ryparken 129",
+        "price": "555555555",
         "zip": "2400",
-        "image": "images\/5d7a00e53f075.jpg",
-        "id": "5d7a00e53fbe0",
+        "image": "images\/5d7cdf10b8f0b.jpg",
+        "id": "5d7cdf10b99d2",
+        "userLikes": [],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -57,18 +75,34 @@
                 "type": "Point"
             },
             "type": "Feature"
-        },
-        "userLikes": [
-            "5d77fc81cecc5"
-        ]
+        }
     },
     {
-        "agent": "5d7902268b116",
-        "address": "Emdrupvej 100",
-        "price": "5000",
-        "zip": "2100",
-        "image": "images\/5d7b76ce2481a.jpg",
-        "id": "5d7b76ce25c90",
+        "agent": "5d7b92a11e866",
+        "address": "hellerup",
+        "price": "99999999",
+        "zip": "2800",
+        "image": "images\/5d7cdf3b00769.jpg",
+        "id": "5d7cdf3b010cc",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7b92a11e866",
+        "address": "norrebrogade 4",
+        "price": "670000",
+        "zip": "2843",
+        "image": "images\/5d7ce02e9fd15.jpg",
+        "id": "5d7ce02ea0782",
         "userLikes": [],
         "marker": {
             "geometry": {
@@ -83,14 +117,12 @@
     },
     {
         "agent": "5d7902268b116",
-        "address": "Emdrup 100",
-        "price": "5999999",
-        "zip": "2830",
-        "image": "images\/5d7b779abb8a3.jpg",
-        "id": "5d7b779abc47e",
-        "userLikes": [
-            "5d77fc81cecc5"
-        ],
+        "address": "emdrupvej 100",
+        "price": "5000000",
+        "zip": "2100",
+        "image": "images\/5d7cece572073.jpg",
+        "id": "5d7cece573352",
+        "userLikes": [],
         "marker": {
             "geometry": {
                 "coordinates": [
