@@ -1,8 +1,8 @@
 <?php
+session_start();
 $sActive= 'contact-us';
 $sPageTitle = 'Contact Us';
 require_once(__DIR__.'/components/top.php');
-
 ?>
 
 <div id="emailContainer">
@@ -26,6 +26,7 @@ require_once(__DIR__.'/components/top.php');
 </div>
 
 <script src="js/send-email.js"></script>
+<script src="js/app.js"></script>
 <script src="js/validate.js"></script>
 </body>
 </html>

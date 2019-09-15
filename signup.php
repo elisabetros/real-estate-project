@@ -1,11 +1,10 @@
 <?php
-$sActive= 'signup';
-$sPageTitle = 'Signup';
-require_once(__DIR__.'/components/top.php');
 
+session_start();
 if($_SESSION){
     header('location:profile.php');
 }
+
 (function(){
     if($_POST){
         //is name emptu
@@ -62,18 +61,17 @@ if($_SESSION){
 
         // echo $sjData;
         // start session for the new user?
-        //TODO send welcoming email
+        //
         header('location:login.php');
     }
 })();
-
-
-
-
+$sActive= 'signup';
+$sPageTitle = 'Signup';
+require_once(__DIR__.'/components/top.php');
 ?>
 <div id="signupPage">
 <div class="formContainer">
-<h1>Welcome to Real Estate</h1>
+<h1>Welcome to Horizon Homes</h1>
 <h2>Please signup</h2>
 <form method="POST" id="frmSignup">
     <label class="radioLabel"><input type="radio" name="signUpType" value="user"  required>Sign up as a user</label>

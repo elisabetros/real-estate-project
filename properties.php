@@ -1,19 +1,17 @@
 <?php
 
-$sActive= 'properties';
-$sPageTitle = 'Properties';
-require_once(__DIR__.'/components/top.php');
 $slikedByUser ='';
-
+session_start();
 if($_SESSION){
     // echo'there is a session';
     $sUserId = $_SESSION['user']->id;
     // echo $sUserId;
 }
 
+$sActive= 'properties';
+$sPageTitle = 'Properties';
+require_once(__DIR__.'/components/top.php');
 ?>
-
-
 <div id="mapProperties">
         
         <div id='map'></div>

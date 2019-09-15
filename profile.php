@@ -1,16 +1,17 @@
 <?php
 // echo $sUserType;
-$sActive= 'profile';
-$sPageTitle = 'profile';
-require_once(__DIR__.'/components/top.php');
+session_start();
 if(!$_SESSION){
     header('location:index.php');
 } 
+$sActive= 'profile';
+$sPageTitle = 'profile';
 $sUserType = $_SESSION['user']->userType;
 
 $sUserId = $_SESSION['user']->id;
 $sjProperties = file_get_contents('data/properties.json');
 $jProperties = json_decode($sjProperties);
+require_once(__DIR__.'/components/top.php');
 ?>  
 <div class="profileContainer" id=<?= '"'.$sUserType .'"'?>>
     <h1>Welcome <?= $_SESSION['user']->name ?></h1>
@@ -58,7 +59,7 @@ $jProperties = json_decode($sjProperties);
 
     <div id ="agentForm">
     <button id="btnShowFrm">Add Property</button>
-    <form  class="hiddenForm" id="frmNewProperty" method="POST" enctype="multipart/form-data">
+    <form   id="frmNewProperty" method="POST" enctype="multipart/form-data">
         <span class="btnCloseFrm">X</span>
         <label>Image<input type="file" name="image" required >
         <div class="requirements">Image must be included</div></label>
@@ -95,7 +96,7 @@ $jProperties = json_decode($sjProperties);
             <input type="text" name="newAddress" class="noValidate" value="'.$jProperty->address.'">
             <button class="hidden btnSaveInfoProp">Save</button>
             </form>
-            <a  class="btnDeleteProperty">Delete Property</a>
+            <img  class="btnDeleteProperty"  src="icons/delete.svg">
             </div>
             ';
         }
@@ -120,8 +121,9 @@ $jProperties = json_decode($sjProperties);
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script src="js/profile.js"></script>
 <script src="js/validate.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ btnEdit.addEventListener('click', function(){
 })
 
 function saveNewInfo(){
+    event.preventDefault();
     let updateUrl = 'api/api-update-profile.php'
     let newName = document.querySelector('[name=newName]').value;
     let newEmail = document.querySelector('[name=newEmail]').value;
@@ -47,39 +48,55 @@ function saveNewInfo(){
             .then(user => {
             console.log(user);
             btnSave.classList.add('hidden');
+            displayNotification('Success', 'Your information has been changed')
             });
     }
 
-const frmAddProperty = document.querySelector('.hiddenForm')
+const frmAddProperty = document.querySelector('#frmNewProperty')
 const btnCloseFrm = document.querySelector('.btnCloseFrm');
 document.querySelector('#btnShowFrm').addEventListener('click', function(){
-    console.log('bla');
-    frmAddProperty.style.display = 'grid';
+    // console.log('bla');
+    frmAddProperty.classList.add('showForm');
     document.querySelector('#btnShowFrm').style.display="none";
     btnCloseFrm.addEventListener('click', function(){
-        frmAddProperty.style.display = 'none';
+        frmAddProperty.classList.remove('showForm');
         document.querySelector('#btnShowFrm').style.display="block";
     })
 
 })
 
-const btnsUpdateProperty = document.querySelectorAll('.updateProperty');
-
-btnsUpdateProperty.forEach(btn=>{
-    btn.addEventListener('click', function(){
+document.addEventListener('click', function(){
+    if (event.target && event.target.className == 'updateProperty'){
+        console.log('save')
         console.log('click');
         let parent = event.target.parentElement;
         parent.querySelector('.noValidate').focus();
         parent.querySelector('.btnSaveInfoProp').classList.remove('hidden');
         // btnSave.classList.remove('hidden');
-       
         parent.querySelector('.btnSaveInfoProp').addEventListener('click', function(){
             saveNewInfoProperty( )
         });
-        
+    }
+    if(event.target && event.target.className=='btnDeleteProperty'){
+        let id = event.target.parentElement.id
+        // console.log(event.target.parentElement.id);
+        let deleteUrl = 'api/api-delete-property.php?id=' +id
+        fetch(deleteUrl)
+                .then(res => res.text())
+                .then(response => {
+                console.log(response);
+                document.getElementById(id).remove();
+                displayNotification('Success!', 'The Property has been deleted')
+                });
+    }
+})
 
-})
-})
+const btnsUpdateProperty = document.querySelectorAll('.updateProperty');
+
+// btnsUpdateProperty.forEach(btn=>{
+//     btn.addEventListener('click', function(){
+// })
+// })
 function saveNewInfoProperty(){
     event.preventDefault();
     let parent = event.target.parentElement.parentElement;
@@ -107,25 +124,7 @@ function saveNewInfoProperty(){
     }
 
 
-    let btnDeleteProperty = document.querySelectorAll('.btnDeleteProperty')
-    document.body.addEventListener('click', function(){
-        btnDeleteProperty.forEach(btn =>{
-            if(event.srcElement == btn){
-                console.log(btn);
-                let id = event.target.parentElement.id
-                // console.log(event.target.parentElement.id);
-                let deleteUrl = 'api/api-delete-property.php?id=' +id
-                fetch(deleteUrl)
-                        .then(res => res.text())
-                        .then(response => {
-                        console.log(response);
-                        document.getElementById(id).remove();
-                        });
-                    }
-                })
-            
-            // btn.addEventListener('click', function(){
-    })
+   
 
 const btnAddProperty = document.querySelector('#btnAddProperty');
 const formToUpload = document.querySelector("#frmNewProperty");
@@ -153,7 +152,7 @@ btnAddProperty.addEventListener('click', function(){
           console.log(response);
           const allAgentProperties = document.querySelector("#agentProperties");
             let newPropertyDiv = document.createElement('div');
-            newPropertyDiv.className = "agentProperty";
+            newPropertyDiv.className = "property";
             newPropertyDiv.id = response.propertyId;
             let newImg = document.createElement('img');
             newImg.setAttribute('src', response.image)
@@ -171,7 +170,7 @@ btnAddProperty.addEventListener('click', function(){
             newInputAddres.setAttribute('value', address);
             newInputPrice.setAttribute('name', 'newPrice');
             newInputZip.setAttribute('name', 'newZip');
-            newInputAddres.setAttribute('name', 'newAddres');
+            newInputAddres.setAttribute('name', 'newAddress');
             newInputPrice.setAttribute('type', 'text');
             newInputZip.setAttribute('type', 'text');
             newInputAddres.setAttribute('type', 'text');
@@ -181,14 +180,14 @@ btnAddProperty.addEventListener('click', function(){
 
             newBtnSave.className="hidden btnSaveInfoProp";
             newBtnSave.textContent = "Save";
-            let newBtnDelete = document.createElement('a');
+            let newBtnDelete = document.createElement('img');
             newBtnDelete.className="btnDeleteProperty";
-            newBtnDelete.textContent="Delete Property";
+            newBtnDelete.src='icons/delete.svg';    
 
             allAgentProperties.append(newPropertyDiv);
             newPropertyDiv.append(newImg, newBtnUpdate, newForm, newBtnDelete)
             newForm.append(newInputPrice, newInputZip, newInputAddres, newBtnSave);
-
+            displayNotification('Success!','The property has been created')
             //append everything to div
             //append div to property container
 
@@ -199,14 +198,3 @@ btnAddProperty.addEventListener('click', function(){
     
     
     
-    // <div class="agentProperty" id="'.$jProperty->id.'">
-    // <img src="'.$jProperty->image.'" alt="">
-    // <button class="updateProperty">Update Information</button>
-    // <form method="Post">
-    // <input type="text" name="newPrice" class="noValidate" value="'.$jProperty->price.' kr.">
-    // <input type="text" name="newZip" class="noValidate" value="'.$jProperty->zip.'">
-    // <input type="text" name="newAddress" class="noValidate" value="'.$jProperty->address.'">
-    // <button class="hidden btnSaveInfoProp">Save</button>
-    // </form>
-    // <a  class="btnDeleteProperty">Delete Property</a>
-    // </div>

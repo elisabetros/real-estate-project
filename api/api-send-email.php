@@ -38,7 +38,7 @@ try {
     $mail->Password   = 'Passwordkea';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
-
+    $mail->SMTPDebug = 0;
     //Recipients
     $mail->setFrom('keakeakea45@gmail.com', 'Kea-student');
     $mail->addAddress('keakeakea45@gmail.com','Kea');     // Add a recipient
@@ -58,8 +58,10 @@ try {
     $mail->Body    = $_POST['emailBody'];
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $mail->send();                                        // Sends the email
-    echo 'Message has been sent';
+    $mail->send(); 
+                                           // Sends the email
+    echo '{"status":1, "message":"email sent"}';
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

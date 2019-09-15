@@ -6,12 +6,22 @@
     box-sizing: border-box;
 }
 body{
-    background-image:url("background-images/copen.jpg");
+    /* background-image:url("background-images/copen.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     max-width: 100vw;
     height:100%;
     min-height:100vh;
+    color:#182628;
+}
+#frontpage, #signupPage, #loginPage, #emailContainer{
+    background-image:url("background-images/copen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    display:grid;
+    align-items: center;
+    justify-content: center;
 }
 h1,h2,h3,label,button,a{
     font-family: 'Roboto Condensed';
@@ -24,15 +34,89 @@ h1, h2{
 }
 
 /****   MENU    *******/
-nav{
+
+  svg.menuIcon {
+    cursor: pointer;
+    margin: 1.5em 0;
+    /* z-index: 15; */
+    fill: #182628;
+    height: 40px;
+    width: 40px;
+    display: none;
+  }
+  svg.menuIcon rect {
+    height: 8px;
+    transition: all 0.6s;
+  }
+  svg.menuIcon rect:nth-child(1) {
+    transform-origin: left top;
+  }
+  
+  svg.menuIcon rect:nth-child(3) {
+    transform-origin: left bottom;
+  }
+  
+  .menu {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 10vh 2em 2em;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s;
+    background: rgba(250, 250, 250,.9);
+  }
+  .menu a {
+    display: block;
+    padding: 0.5em 0;
+    font-size: 2em;
+    /* font-weight: bold; */
+  }
+  .hiddenMenu {
+    transform: translateX(-200vw);
+  }
+  
+  .fadeOut {
+    opacity: 0;
+  }
+  
+  .rotateUp {
+    transform: rotate(-45deg) translate(18px, 41px);
+  }
+  
+  .rotateDown {
+    transform: rotate(45deg) translate(17px, -14px);
+  }
+  
+  header {
+    max-width: 100vw;
+    width: 100%;
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    text-align: right;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    height:70px;
+    justify-content: center;
+    align-items: center;
+    background:rgba(242, 242, 242, .5);
+  }
+ 
+ 
+.deskmenu{
+    grid-column: 2;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0 1em;
-    height:50px;
-       background:linear-gradient(360deg, rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.5) 30%,
-    rgba(255,255,255,1) 100%);
+   
     /* background:rgba(250,250,250,.5); */
 }
 a{
@@ -40,13 +124,17 @@ a{
     text-decoration:none;
 }
 nav>a{
-    color:black;
+    color:#182628;
 }
 a#logo{
-    text-align: left; 
+    position: absolute;
+    width: 32%;
+    top: 2vh;
+    text-align: left;
+    padding: 0 6%;
 }
 a:visited{
-    color:black;
+    color:#182628;
 }
 a.active{
     font-weight: bold;
@@ -61,70 +149,94 @@ a.active{
 }
 
 /*****  Reusable Css    *****/
-.property p, .property input, .property h3, .profileInformation input{
+button:disabled{
+    background:#bfc1c1 !important;
+}
+.property p, .property input, .property h3, .profileInformation input, h1, h2, h3{
     text-transform: capitalize
 }
 .formContainer{
-    background:rgba(250, 250, 250,.6);
-    margin:1em  20em;
-    padding:2%;
-    border-radius:10px;
+    background:rgba(242, 242, 242, .6);
+    padding:8%;
+    /* border-radius:10px; */
 }
- button, .btnDeleteProperty, label.radioLabel{
+label.radioLabel{
+    width:100%;
+}
+ button,  label.radioLabel{
+     /* width:100%; */
     height:35px;
     line-height: 35px;
     margin: 5% auto;
     padding:0 8%;
     text-align: center;
-    background-color:#329795;
+    background-color:#182628;
     color:white !important;
-    border-radius:5px;
+    /* border-radius:5px; */
     font-size: 1em;
     border:none;
+    cursor: pointer;
+    transition:all .2s;
 }
-
+button:hover, label.radioLabel:hover,.btnLogout:hover{
+    transform:scale(1.1);
+}
+/* loginbt, signupbtn, add property, save == green */
+.btnSaveInfoProp,#btnAddProperty,.btnSaveInfo, #btnSendEmail,#btnLogin,#btnSignup{
+    background:#41d873;
+}
 /*****   INDEXPAGE    *****/
 #searchResults{
     display: none;
-    width:300px;
+    width:50%;
     height:auto;
-    margin: 0 10.2em;
-    padding: 1%;
+    margin: -1em 10em 0;
+    padding: 3% 1% 1%;
     background: #eee;
-    border-radius: 0 0 5px 5px
+    /* border-radius: 0 0 5px 5px */
 }
 .searchLink{
     text-align: left;
     display: block;
-    color:#329795;
+    color:#182628;
     font-size:110%;
-    border-bottom:1px solid #ddd;
+    padding: 2% 0;
 }
 #frontpage{
-    /* background-image:url("background-images/reykjavik.jpg");
-    background-size: cover;
-    background-repeat: no-repeat; */
-    /* width:100vw; */
-    /* margin-top:-10vh;
-    height:110vh; */
-    padding:10em;
+    height:110vh; 
+    padding:15em;
 }
 #frontpage .noValidate{
+    /* border-radius: 5px 0 0 5px; */
     background:#eee !important;
 }
 #frmSearch {
     display: grid;
     grid-template-columns: 1fr .1fr;
-    grid-gap: 10px;
+    grid-gap: 0;
     text-align: center;
     justify-content: center;
-    margin: 1em 10em 0;
 }
 #frmSearch button{
+    /* border-radius: 0 5px 5px 0; */
     margin:0;
+    padding:3%;
+    height:auto;
+    width:50px
+}
+button>svg{
+    display:block;
+    padding: 0 3%;
+    fill:white;
+    margin:auto;
+    height:25px;
+}
+#frmSearch input.noValidate{
+    padding:10px;
 }
 #frontpage > h1{
     grid-column: 1/-1;
+    /* color:#41d873; */
 }
 .searchBar{
     display: block;
@@ -137,9 +249,9 @@ a.active{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
     position: fixed;
-    top:50px;
+    top:70px;
     left:0;
     padding:0.5em;
     background:linear-gradient(180deg, rgba(255,255,255,0) 0%,
@@ -149,19 +261,17 @@ a.active{
 #map{
     width: 100%;
     z-index: 0;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 
 .marker {
     display: block;
-    border: none;
-    border-radius: 50%;
     cursor: pointer;
     padding: 0;
-    background:  #86333C;
-    width:15px;
-    height:15px;
+    background-image:url(background-images/marker.svg);
+    width:20px;
+    height:20px;
 }
 
 #properties{
@@ -174,6 +284,7 @@ a.active{
 }
 #properties h1{
     grid-column: 1/-1;
+    margin:2% 0;
 }
 .property{
     background:rgba(250, 250, 250,.7);
@@ -181,20 +292,21 @@ a.active{
     /* grid-template-columns: 2fr 1fr; */
     width:100%;
     cursor: pointer;
-    border-radius: 5px;
+    background:#f2f2f2;
     margin-bottom:.5em;
     box-shadow: 0 2px 4px rgba(0,0,0,.3);
     position: relative;
+    padding-bottom:.5em;
 }
 
 .property p{
-    margin: 0 1em 1em;
+    margin: 0 1em 0;
 }
+
 .property h3{
     margin: 1em 1em 0; 
 }
 .property img{
-    border-radius: 5px 5px 0 0 ;
     grid-column:1/-1;
     width:100%;
     height:150px;
@@ -204,19 +316,19 @@ a.active{
     box-shadow:0 4px 10px rgba(0,0,0,.5);
     transform:scale(1.05);
     z-index: 1000;
-    background:white;
     transition: all .3s;
 }
 .marker.activeProperty{
-    height:25px;
-    width: 25px;
+    box-shadow: none;
+    height:30px;
+    width: 30px;
 }
 
 
 .heart {
-    fill: #86333C;
+    fill: #182628;
     opacity: .5;
-    bottom: 30%;
+    bottom: 25%;
     right:5%;
     width: 25px;
     position: absolute;
@@ -239,22 +351,20 @@ a.active{
 
 #signupForm, form{
     display:grid;
-    justify-content: center;
-    align-content: center;
+    /* justify-content: center;
+    align-content: center; */
     grid-gap: 10px;
 }
 .profileInformation> form{
     display: block;
 }
 /* button{
-    border-radius: 5px;
+    /* border-radius: 5px; 
     padding:10px 5px;
     
-    background-color: #329795;
+    background-color: #182628;
 } */
-button:disabled{
-    background:#ddd;
-}
+
 label {
     font-weight: bold;
 }
@@ -262,7 +372,7 @@ label {
 textarea {
    width: 100%;
    border: 0;
-   border-radius: 5px;
+   /* border-radius: 5px; */
    padding:10px 10px 10px 30px;
    background: #F5F0F6;
 }
@@ -271,7 +381,7 @@ input[type="password"],
 input[type="number"]{
    width: 100%;
    border: 0;
-   border-radius: 5px;
+   /* border-radius: 5px; */
    height:35px;
    padding:10px 10px 10px 30px;
    background: #F5F0F6;
@@ -331,10 +441,16 @@ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requiremen
 #agent > #likedProperties{
     display: none;
 }
-
-.hiddenForm{
-    display:none;
+#frmNewProperty{
+    max-height:0;
+    transition:all .2s;
+    overflow: hidden;
 }
+.showForm{
+    transition:all .2s;
+    max-height:300px !important;
+}
+
 .btnCloseFrm{
     cursor: pointer;
     text-align: right;
@@ -342,15 +458,24 @@ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requiremen
 }
 
 .profileContainer{
+        background:rgb(189, 217, 191);
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    padding: 5%;
+    padding: 100px 5% 5%;
     min-height:100vh;
-    background:linear-gradient(180deg, rgba(255,255,255,.1) 0%,
-    rgba(255,255,255,0.5) 50%,
-    rgba(255,255,255,1) 100%);
-    /* grid-gap:5%; */
+    background: linear-gradient(45deg, rgba(166,195,213,1) 0%,
+     rgba(255,255,255,.7) 49%, rgba(166,207,213,.8) 100%);
+    /* grid-gap:5%;*/
+    /* color:rgb(166, 207, 213); */
+}
+.profileInformation{
+    height:50%;
+}
+.profileInformation, #likedProperties, #agentProperties{
+    padding:3%;
+    /* background:#f2f2f2;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3); */
 }
 .profileContainer>h1{
     align-self:center;
@@ -360,7 +485,7 @@ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requiremen
     display:grid;
     grid-template-columns: 1fr 1fr;
     width:100%;
-    grid-gap:3%;
+    grid-column-gap:2%;
     /* overflow-y:scroll;  */
 }
 
@@ -374,15 +499,31 @@ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requiremen
 }
 #agentProperties form{
     display:initial;
+    padding: 0 6%;
 }
 
-
-.btnDeleteProfile, .btnDeleteProperty{
+.btnDeleteProperty{
+    width: 30px !important;
+    height:auto !important;
+    object-fit: inherit !important;
+     position: absolute;
+    bottom: 5%;
+    right: 5%;
+    transition:all .2s;
+}
+.btnDeleteProperty:hover {
+  transform:scale(1.2);
+}
+.btnDeleteProfile{
     background:#86333C;
     margin:0;  
 }
 .profileInformation, #agentForm{
     margin:5% 0;
+}
+#agentForm{
+    display:grid;
+    justify-content: right;
 }
 /* .profileInformation div{
     display: grid;
@@ -420,6 +561,13 @@ input.noValidate{
     justify-content: right;
 }
 /*****    MODAL    *****/
+.closeModal{
+    position: absolute;
+    top:5%;
+    right:5%;   
+    font-weight: bold;
+    cursor: pointer;
+}
 .modal{
     position:fixed;
     top:0;
@@ -429,10 +577,17 @@ input.noValidate{
     height:100vh;
     /* overflow: hidden; */
 }
+.modalShown{
+    display:block;
+}
+.notificationModal h1{
+    font-size :200% !important;
+}
 .modalContent{
     background:white;
     box-shadow: 0px 4px 10px rgba(0,0,0,.5);
     border-radius:10px;
+    position:relative;
     margin:10vh auto;
     width:70vw;
     height:40vh;
@@ -454,7 +609,7 @@ input.noValidate{
     background:#86333C;
 }
 .backToProfile, .btnLogout{
-    background: #329795;
+    background: #182628;
 }.btnDeleteProperty{
     padding: 8px 5px;
 }
@@ -463,7 +618,7 @@ input.noValidate{
     /* width: 50px;
     height: 100px; */
     color: white !important;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 
@@ -483,7 +638,7 @@ input.noValidate{
     color:#86333C;
 }
 .error a{
-    color:#329795;
+    color:#182628;
     font-style: italic;
 }
 
@@ -498,20 +653,45 @@ input.noValidate{
     }
 }
 @media only screen and (max-width: 768px) {
+   /*********   MENU    **********/
+  
+  .deskmenu {
+    display: none;
+  }
+  svg.menuIcon {
+    display: block;
+    grid-column: 2;
+  }
+  header{
+      grid-template-columns: 3fr 1fr;
+  }
+  a#logo{
+      width:50%;
+  }
     #map{
         display: none;
+    }
+    #frontpage{
+        padding:4em 1em;
+    }
+    #frmSearch{
+        margin: 1em 0;
     }
     #mapProperties{
         display:block;
         height:100%;
         position:inherit;
         padding:5%;
+        margin-top:70px;
     }
     #properties{
         grid-gap:3%;
     }
     .formContainer {
         margin:5em;
+    }
+    .heart{
+        bottom:20%;
     }
     /* .profileContainer{
         display: block; */
@@ -527,4 +707,8 @@ input.noValidate{
     .formContainer {
         margin: 5em 2em;
     }
+    a#logo{
+        width:60%;
+    }
+    
 }

@@ -44,6 +44,7 @@ searchInput.addEventListener('input', function(){
 
     if(searchInput.value.length == 0){
       
+        divResults.style.display = 'none'; 
     }else{
         divResults.style.display = 'block'; 
     }

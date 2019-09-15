@@ -1,13 +1,9 @@
 <?php
-
-$sActive= 'login';
-$sPageTitle = 'Login';
-require_once(__DIR__.'/components/top.php');
-
-
+session_start();
 if($_SESSION){
     header('location:profile.php');
 }
+
 (function(){
     if($_POST){
         // is email empty
@@ -23,28 +19,26 @@ if($_SESSION){
             return;
         }
         // check if the loginType is a user or an agent
-        // if($_POST['loginType'] ==='user' || $_POST['loginType'] ==='agent'  ){
-        //     // $sloginType = $_POST['loginType'];
-        //     // echo $_POST['loginType'];
-        // }else{
-        //     return;
+        // if($_POST['loginType'] !='user' || $_POST['loginType'] !='agent'  ){
+        //      return;
         // }
+
                // is password right length
-        if(strlen($_POST['txtPassword']) < 4 ){
+               if(strlen($_POST['txtPassword']) < 4 ){
             return;
         }
         // is email valid
         if(!filter_var($_POST['txtEmail'], FILTER_VALIDATE_EMAIL)){
             return;
         }
-
-
+        
+        
         //  get data from file
         $sjData = file_get_contents(__DIR__.'/data/users.json');
         // echo $sjData;
         $jData = json_decode($sjData);
         // // check if user exists
-        // $blUserMatch = 0;
+        $blUserMatch = 0;
         foreach($jData as $jUser){
             if($_POST['txtEmail']=== $jUser->email && $_POST['txtPassword']=== $jUser->password){
                 // echo json_encode($jUser);
@@ -52,23 +46,20 @@ if($_SESSION){
                 $_SESSION['user'] = $jUser;
                 // echo json_encode($_SESSION['user']);
                 header('location:profile.php');
-                // $blUserMatch = 1;
+                return;
+                $blUserMatch = 1;
             }
         }
-        // if($blUserMatch == 0){
-        //     return;
-        // }
-
+      
     }
-
 })();
 
-
-
-?>
-<div id="loginPage">
+$sActive= 'login';
+$sPageTitle = 'Login';
+require_once(__DIR__.'/components/top.php');
+?><div id="loginPage">
     <div class="formContainer">
-<h1>Welcome to Real Estate</h1>
+<h1>Welcome to Horizon Homes</h1>
 <h2>Please Login</h2>
 <form action="" method="POST" id="frmLogin">
     <label class="radioLabel"><input type="radio" name="loginType" value="user" required>Log in as a user</label>
@@ -86,6 +77,18 @@ if($_SESSION){
 </div>
 
 </div>
+
+<?php
+  if($blUserMatch===0){
+    echo '
+    <div class="modalsShown">
+    <div class="modalContent">
+        <h1>Wrong Login</h1>
+        </div>
+    </div>
+    ';
+}
+?>
 <script src="js/validate.js"></script>
 </body>
 </html>

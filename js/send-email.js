@@ -16,8 +16,11 @@ btnSendEmail.addEventListener('click', function(){
         })
         .then(res => res.json())
         .then(response => {
-        // console.log(response);
-        if(response.status ==0){
+        console.log(response.status);
+        if(response.status){
+            displayNotification('Success!', 'Your message has been sent, we will contact you shortly.')
+        }
+        else{
             displayErrorMessage(response);
         }
          });
@@ -26,7 +29,7 @@ btnSendEmail.addEventListener('click', function(){
 
 function displayErrorMessage(response){
     console.log(response);
-    if(response.message =="no user signed in"){
+    // if(response.message =="no user signed in"){
         document.querySelector('.error').classList.remove('hidden');
-    }
+    // }
 }

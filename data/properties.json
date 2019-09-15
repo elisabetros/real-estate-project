@@ -1,46 +1,6 @@
 [
     {
         "agent": "5d7b92a11e866",
-        "address": "roadname 100",
-        "price": "250000",
-        "zip": "2790",
-        "image": "images\/5d7cddc2a8f9e.jpg",
-        "id": "5d7cddc2a98f1",
-        "userLikes": [],
-        "marker": {
-            "geometry": {
-                "coordinates": [
-                    12.563575,
-                    55.701113
-                ],
-                "type": "Point"
-            },
-            "type": "Feature"
-        }
-    },
-    {
-        "agent": "5d7902268b116",
-        "address": "guldvej 550",
-        "price": "55000000",
-        "zip": "3780",
-        "image": "images\/5d7a00c6df7b8.jpg",
-        "id": "5d7a00c6e02d2",
-        "marker": {
-            "geometry": {
-                "coordinates": [
-                    12.548115,
-                    55.774413
-                ],
-                "type": "Point"
-            },
-            "type": "Feature"
-        },
-        "userLikes": [
-            "5d77fc81cecc5"
-        ]
-    },
-    {
-        "agent": "5d7b92a11e866",
         "address": "streetname 100",
         "price": "500000000",
         "zip": "2100",
@@ -48,7 +8,9 @@
         "id": "5d7cdd6e3f9b5",
         "userLikes": [
             "5d7d2e608da7d",
-            "5d7d2e608da7d"
+            "5d7d2e608da7d",
+            "5d77fc81cecc5",
+            "5d7e5096afb53"
         ],
         "marker": {
             "geometry": {
@@ -71,49 +33,9 @@
         "userLikes": [
             "5d7d2e608da7d",
             "5d7d2e608da7d",
-            "5d7d2e608da7d"
-        ],
-        "marker": {
-            "geometry": {
-                "coordinates": [
-                    12.566515,
-                    55.705193
-                ],
-                "type": "Point"
-            },
-            "type": "Feature"
-        }
-    },
-    {
-        "agent": "5d7b92a11e866",
-        "address": "hellerup",
-        "price": "99999999",
-        "zip": "2800",
-        "image": "images\/5d7cdf3b00769.jpg",
-        "id": "5d7cdf3b010cc",
-        "userLikes": [
-            "5d7d2e608da7d"
-        ],
-        "marker": {
-            "geometry": {
-                "coordinates": [
-                    12.566515,
-                    55.705193
-                ],
-                "type": "Point"
-            },
-            "type": "Feature"
-        }
-    },
-    {
-        "agent": "5d7b92a11e866",
-        "address": "norrebrogade 4",
-        "price": "670000",
-        "zip": "2843",
-        "image": "images\/5d7ce02e9fd15.jpg",
-        "id": "5d7ce02ea0782",
-        "userLikes": [
-            "5d7d2e608da7d"
+            "5d7d2e608da7d",
+            "5d7e5096afb53",
+            "5d77fc81cecc5"
         ],
         "marker": {
             "geometry": {
@@ -128,14 +50,147 @@
     },
     {
         "agent": "5d7902268b116",
-        "address": "emdrupvej 100",
-        "price": "5000000",
-        "zip": "2100",
-        "image": "images\/5d7cece572073.jpg",
-        "id": "5d7cece573352",
+        "address": "tagensvej 500",
+        "price": "600000000",
+        "zip": "2800",
+        "image": "images\/5d7e3e4c282e7.jpg",
+        "id": "5d7e3e4c28cd8",
         "userLikes": [
-            "5d7d2e608da7d"
+            "5d77fc81cecc5"
         ],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.512315,
+                    55.712193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7b92a11e866",
+        "address": "roadname 56",
+        "price": "4090000",
+        "zip": "2400",
+        "image": "images\/5d7e3f584306a.jpg",
+        "id": "5d7e3f5843b9d",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.562415,
+                    55.708893
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7b92a11e866",
+        "address": "lyngbyvej 53",
+        "price": "4500000",
+        "zip": "2100",
+        "image": "images\/5d7e3f7614f7e.jpg",
+        "id": "5d7e3f76159d8",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.533315,
+                    55.709093
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "stefansgade 36",
+        "price": "540000",
+        "zip": "2800",
+        "image": "images\/5d7e3fa599342.jpg",
+        "id": "5d7e3fa599e6c",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.556515,
+                    55.712193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "kastrup",
+        "price": "906000",
+        "zip": "3830",
+        "image": "images\/5d7e3fd38c62b.jpg",
+        "id": "5d7e3fd38d0e6",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.565715,
+                    55.707893
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "mansionroad",
+        "price": "9080090",
+        "zip": "2400",
+        "image": "images\/5d7e40d015137.jpg",
+        "id": "5d7e40d015d03",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.796515,
+                    55.719193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "streetraod 560",
+        "price": "600000",
+        "zip": "2800",
+        "image": "images\/5d7e4ea1b33c7.jpg",
+        "id": "5d7e4ea1b3d52",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.306515,
+                    55.734193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "mulholland dr.",
+        "price": "5600000",
+        "zip": "2300",
+        "image": "images\/5d7e5a281ef00.png",
+        "id": "5d7e5a281f80b",
+        "userLikes": [],
         "marker": {
             "geometry": {
                 "coordinates": [

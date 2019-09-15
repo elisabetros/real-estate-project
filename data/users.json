@@ -1,6 +1,6 @@
 [
     {
-        "name": "freyr",
+        "name": "freysir",
         "email": "frer@e.com",
         "password": "password",
         "id": "5d77fc81cecc5",
@@ -48,7 +48,7 @@
         "userType": "agent"
     },
     {
-        "name": "janet",
+        "name": "janett",
         "email": "janet@jane.com",
         "password": "password",
         "id": "5d7902268b116",
@@ -94,6 +94,20 @@
         "email": "kermit@kerm.com",
         "password": "password",
         "id": "5d7d2e608da7d",
+        "userType": "user"
+    },
+    {
+        "name": "mary",
+        "email": "mary@mary.cas",
+        "password": "password",
+        "id": "5d7e370b62aee",
+        "userType": "user"
+    },
+    {
+        "name": "blarb",
+        "email": "blarb@blarv.com",
+        "password": "password",
+        "id": "5d7e5096afb53",
         "userType": "user"
     }
 ]

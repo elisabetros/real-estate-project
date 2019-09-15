@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZWxiZXJvIiwiYSI6ImNrMGM1Z2k0aTB5Nnkzam51Y3Bpd
 var map = new mapboxgl.Map({
 container: 'map',
 center: [12.537515, 55.705493], // starting position, latitude, longitute
-zoom: 9, // starting zoom
+zoom: 10, // starting zoom
 style: 'mapbox://styles/elbero/ck0c624q03wcg1crp33fo2rzk'
 });
 
