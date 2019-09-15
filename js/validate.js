@@ -20,8 +20,9 @@ radioLabels.forEach(radioLabel => {
 
 allInputs.forEach(input => {
     input.addEventListener('input', function(){
-
-        let form = input.parentElement.parentElement;
+        // if (input.parentElement.parentElement == ('form')){
+            let form = input.parentElement.parentElement;
+      
         console.log(form.checkValidity());
         if(emailInput){
             // console.log('there is an email attribute')

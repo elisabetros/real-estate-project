@@ -23,5 +23,6 @@
 
 
     <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

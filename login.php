@@ -90,5 +90,6 @@ require_once(__DIR__.'/components/top.php');
 }
 ?>
 <script src="js/validate.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

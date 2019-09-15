@@ -5,7 +5,6 @@ const menu = document.querySelector(".menu");
 const bars = menuIcon.querySelectorAll("rect");
 let menuLinks = document.querySelectorAll(".menu>nav>a");
 const header = document.querySelector("header");
-// let dropdown = document.querySelector(".dropdown-content");
 menuIcon.addEventListener("click", () => {
   // console.log("menu clicked")
   toggleMenu();
@@ -42,7 +41,9 @@ function displayByZip(zip){
     let btnShowAll = document.createElement('button');
     btnShowAll.textContent="Show all properties";
     document.querySelector('#properties').prepend(btnShowAll);
-    btnShowAll.addEventListener('click', )
+    btnShowAll.addEventListener('click', function(){
+
+    })
     console.log(zip)
     let allProperties = document.querySelectorAll('.property');
     allProperties.forEach(property=>{
@@ -61,11 +62,13 @@ function displayByZip(zip){
 
 let propertyElements = document.querySelectorAll('.property');
 propertyElements.forEach(propertyElement =>{
-    propertyElement.addEventListener('click', function(){
-        // console.log(event.target.parentElement.id);
-        propertyId = event.target.parentElement.id
-        addActiveClassToProperty(propertyId.substring(2));
-    })
+    if(propertyElement.parentElement.parentElement.id=='mapProperties'){
+        propertyElement.addEventListener('click', function(){
+            // console.log(propertyElement.parentElement.parentElement.id);
+            propertyId = event.target.parentElement.id
+            addActiveClassToProperty(propertyId.substring(2));
+        })
+    }
 })
 
 
@@ -89,7 +92,7 @@ btnLikeProperty.forEach(btn => {
     btn.addEventListener('click', function(){
         propertyId = event.target.parentElement.parentElement.id
         propertyId = propertyId.substring(2);
-        console.log(propertyId);
+        // console.log(propertyId);
         if(btn.className.baseVal == "heart likedByUser"){
             unlikeProperty(propertyId);
             return;
@@ -102,7 +105,7 @@ btnLikeProperty.forEach(btn => {
         })
         .then(function(response) {
           if(response.status==0){
-              displayNotification('Sorry!','You must be logged in to like a property')
+              displayNotification('Sorry!','You must be a logged in user to like a property.')
           }else{
             btn.className.baseVal="heart likedByUser";
           }
@@ -111,7 +114,7 @@ btnLikeProperty.forEach(btn => {
 });
 
 function unlikeProperty(propertyId){
-    console.log('i will unlike');
+    console.log(propertyId);
     fetch("api/api-user-unlike-property.php?id=" + propertyId)
         .then(function(response) {
           return response.json();

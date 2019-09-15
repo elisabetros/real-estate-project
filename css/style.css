@@ -14,7 +14,14 @@ body{
     min-height:100vh;
     color:#182628;
 }
-#frontpage, #signupPage, #loginPage, #emailContainer{
+#frontpage{
+    background-image:url("background-images/copen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    padding: 10em 15em;
+}
+#signupPage, #loginPage, #emailContainer{
     background-image:url("background-images/copen.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -110,7 +117,6 @@ h1, h2{
  
  
 .deskmenu{
-    grid-column: 2;
     font-size: 1.2em;
     font-weight: bold;
     display: grid;
@@ -127,10 +133,7 @@ nav>a{
     color:#182628;
 }
 a#logo{
-    position: absolute;
-    width: 32%;
-    top: 2vh;
-    text-align: left;
+    width: 50%;
     padding: 0 6%;
 }
 a:visited{
@@ -202,10 +205,7 @@ button:hover, label.radioLabel:hover,.btnLogout:hover{
     font-size:110%;
     padding: 2% 0;
 }
-#frontpage{
-    height:110vh; 
-    padding:15em;
-}
+
 #frontpage .noValidate{
     /* border-radius: 5px 0 0 5px; */
     background:#eee !important;
@@ -236,6 +236,7 @@ button>svg{
 }
 #frontpage > h1{
     grid-column: 1/-1;
+    margin:1%;
     /* color:#41d873; */
 }
 .searchBar{
@@ -436,10 +437,10 @@ input[type="password"]:invalid:not(:focus):not(:placeholder-shown) ~ .requiremen
 /*****      PROFILE PAGE     *****/
 
 #user >#agentForm, #user >#agentProperties {
-    display: none;
+    display: none !important;
 }
 #agent > #likedProperties{
-    display: none;
+    display: none !important;
 }
 #frmNewProperty{
     max-height:0;
@@ -660,7 +661,8 @@ input.noValidate{
   }
   svg.menuIcon {
     display: block;
-    grid-column: 2;
+    justify-self: right;
+    margin: 0 2em;
   }
   header{
       grid-template-columns: 3fr 1fr;
@@ -672,7 +674,8 @@ input.noValidate{
         display: none;
     }
     #frontpage{
-        padding:4em 1em;
+        display:block;
+        padding: 10em 5em;
     }
     #frmSearch{
         margin: 1em 0;
@@ -709,6 +712,10 @@ input.noValidate{
     }
     a#logo{
         width:60%;
+    }
+    #frontpage{
+        
+        padding:8em 1em;
     }
     
 }

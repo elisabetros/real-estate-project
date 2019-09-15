@@ -1,10 +1,13 @@
 let modal = document.querySelector('.modal');
 const createPropertyUrl = "/../agent-create-property.php";
+let btnEdit = document.querySelector('.editInfo');
+let btnSave = document.querySelector('.btnSaveInfo')
+let inputChangeInfo = document.querySelectorAll('.noValidate')
+const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 document.querySelector('.btnDeleteProfile').addEventListener('click', function(){
     openModal();
 })
-
 function openModal(){
     modal.style.display="block";
     document.querySelector('.continueDelete').addEventListener('click', function(){
@@ -16,17 +19,12 @@ function openModal(){
         modal.style.display="none";
     })
 }
-let btnEdit = document.querySelector('.editInfo');
-let btnSave = document.querySelector('.btnSaveInfo')
-let inputChangeInfo = document.querySelectorAll('.noValidate')
-const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
 btnEdit.addEventListener('click', function(){
     // console.log('click btn');
     inputChangeInfo[0].focus()
     btnSave.classList.remove('hidden');
-    
     btnSave.addEventListener('click', saveNewInfo);
 })
 
@@ -48,7 +46,7 @@ function saveNewInfo(){
             .then(user => {
             console.log(user);
             btnSave.classList.add('hidden');
-            displayNotification('Success', 'Your information has been changed')
+            displayNotification('Success', 'Your information has been updated')
             });
     }
 
@@ -74,7 +72,8 @@ document.addEventListener('click', function(){
         parent.querySelector('.btnSaveInfoProp').classList.remove('hidden');
         // btnSave.classList.remove('hidden');
         parent.querySelector('.btnSaveInfoProp').addEventListener('click', function(){
-            saveNewInfoProperty( )
+            saveNewInfoProperty( );
+            return;
         });
     }
     if(event.target && event.target.className=='btnDeleteProperty'){
@@ -91,12 +90,8 @@ document.addEventListener('click', function(){
     }
 })
 
-const btnsUpdateProperty = document.querySelectorAll('.updateProperty');
+// const btnsUpdateProperty = document.querySelectorAll('.updateProperty');
 
-// btnsUpdateProperty.forEach(btn=>{
-//     btn.addEventListener('click', function(){
-// })
-// })
 function saveNewInfoProperty(){
     event.preventDefault();
     let parent = event.target.parentElement.parentElement;
@@ -118,6 +113,7 @@ function saveNewInfoProperty(){
             .then(res => res.json())
             .then(user => {
             console.log(user);
+            displayNotification('Success!','The property information has been updated');
             btnSave.classList.add('hidden');
             });
     parent.querySelector('.btnSaveInfoProp').classList.add('hidden');
@@ -135,14 +131,15 @@ btnAddProperty.addEventListener('click', function(){
     let image = document.querySelector('[type=file]').files[0]
     let price = document.querySelector('[name=price]').value
 // console.log(image);
-   
     let formData = new FormData();
     formData.append('address', address);
     formData.append('price', price);
     formData.append('zip', zip);
     formData.append('image', image);
+    // let fetchResponse = fetchPostrqs(url, formData);
+    // console.log(response);
 
-    
+
     fetch("api/api-agent-create-property.php", {
         method: "POST",
         body: formData
@@ -195,6 +192,18 @@ btnAddProperty.addEventListener('click', function(){
 
         });
     });
+    
+
+    // function fetchPostrqs(url, formData){
+    //     fetch(url, {
+    //         method: "POST",
+    //         body: formData
+    //         })
+    //             .then(res => res.json())
+    //             .then(user => {
+    //             console.log(user);
+    //             });
+    //     }
     
     
     

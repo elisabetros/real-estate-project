@@ -6,12 +6,7 @@
         "zip": "2100",
         "image": "images\/5d7cdd6e3ee7f.jpg",
         "id": "5d7cdd6e3f9b5",
-        "userLikes": [
-            "5d7d2e608da7d",
-            "5d7d2e608da7d",
-            "5d77fc81cecc5",
-            "5d7e5096afb53"
-        ],
+        "userLikes": [],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -31,7 +26,6 @@
         "image": "images\/5d7cdf10b8f0b.jpg",
         "id": "5d7cdf10b99d2",
         "userLikes": [
-            "5d7d2e608da7d",
             "5d7d2e608da7d",
             "5d7d2e608da7d",
             "5d7e5096afb53",
@@ -76,7 +70,9 @@
         "zip": "2400",
         "image": "images\/5d7e3f584306a.jpg",
         "id": "5d7e3f5843b9d",
-        "userLikes": [],
+        "userLikes": [
+            "5d7e370b62aee"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -95,7 +91,9 @@
         "zip": "2100",
         "image": "images\/5d7e3f7614f7e.jpg",
         "id": "5d7e3f76159d8",
-        "userLikes": [],
+        "userLikes": [
+            "5d7e370b62aee"
+        ],
         "marker": {
             "geometry": {
                 "coordinates": [
@@ -156,7 +154,7 @@
         "marker": {
             "geometry": {
                 "coordinates": [
-                    12.796515,
+                    12.596515,
                     55.719193
                 ],
                 "type": "Point"
@@ -166,7 +164,7 @@
     },
     {
         "agent": "5d7902268b116",
-        "address": "streetraod 560",
+        "address": "streetroad 560",
         "price": "600000",
         "zip": "2800",
         "image": "images\/5d7e4ea1b33c7.jpg",
@@ -175,7 +173,7 @@
         "marker": {
             "geometry": {
                 "coordinates": [
-                    12.306515,
+                    12.506515,
                     55.734193
                 ],
                 "type": "Point"
@@ -190,6 +188,63 @@
         "zip": "2300",
         "image": "images\/5d7e5a281ef00.png",
         "id": "5d7e5a281f80b",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "\u00deingholtsstr\u00e6ti",
+        "price": "9000000",
+        "zip": "1800",
+        "image": "images\/5d7e78a6815bb.jpg",
+        "id": "5d7e78a681d46",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "lanageger\u00f0i 2",
+        "price": "560003333",
+        "zip": "2300",
+        "image": "images\/5d7e7a8ac041c.jpg",
+        "id": "5d7e7a8ac1000",
+        "userLikes": [],
+        "marker": {
+            "geometry": {
+                "coordinates": [
+                    12.566515,
+                    55.705193
+                ],
+                "type": "Point"
+            },
+            "type": "Feature"
+        }
+    },
+    {
+        "agent": "5d7902268b116",
+        "address": "houseroad 50",
+        "price": "2349999",
+        "zip": "3879",
+        "image": "images\/5d7e844e894a9.jpg",
+        "id": "5d7e844e899d9",
         "userLikes": [],
         "marker": {
             "geometry": {
